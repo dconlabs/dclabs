@@ -7,11 +7,9 @@ export async function POST(request) {
   try {
     const { password } = await request.json();
 
-    // 1. DB 연결
     const client = await connectDB;
     const db = client.db('news');
 
-    // 2. 관리자 정보 가져오기
     const adminUser = await db.collection('admins').findOne({});
 
     if (!adminUser) {
@@ -30,14 +28,12 @@ export async function POST(request) {
       return NextResponse.json({ message: '비밀번호를 다시 확인해주세요.' }, { status: 401 });
     }
 
-    // 4. 토큰 생성
     const token = jwt.sign(
       { role: 'admin' }, 
       process.env.JWT_SECRET, 
       { expiresIn: '7d' }
     );
 
-    // 5. 응답 및 쿠키 설정
     const response = NextResponse.json({ message: '로그인 성공' }, { status: 200 });
 
     response.cookies.set('admin_token', token, {

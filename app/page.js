@@ -16,8 +16,6 @@ export default async function Home() {
   return (
     <div>
       test 테스트
-      <Link href="/testPage">testPage</Link>
-
       <NewsCard newsData={JSON.parse(JSON.stringify(result))} token={hasToken}/>
 
       {

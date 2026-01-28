@@ -1,39 +1,15 @@
 'use client'
 
-import axios from "axios";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 
-export default function NewsCard({ newsData, token }) {
+export default function NewsCard({ newsData }) {
 
   const router = useRouter();
-
-  const deletePost = async (id) => {
-
-    if (!confirm("정말 삭제하시겠습니까?")) return;
-
-    try {
-      const res = await axios.delete("/api/admin", { 
-        data: { id: id } 
-      });
-
-      if (res.data.ok) {
-        alert("삭제되었습니다.");
-        router.push("/");
-        router.refresh();
-      } else {
-        alert("삭제 실패: " + (res.data.error || "권한이 없습니다."));
-      }
-    } catch (error) {
-      console.error('Error deleting post:', error);
-      alert('게시글 삭제 실패');
-    }
-  }
 
   return (
     <div>
       {newsData.map((post) => (
-        <div key={post._id}>
+        <div key={post._id} onClick={() => router.push(`/newsDetail/${post._id}`)} post={post}>
           <h2>{post.title}</h2>
           <p>{post.contents}</p>
           {post.images && post.images.length > 0 && (
@@ -48,9 +24,6 @@ export default function NewsCard({ newsData, token }) {
               ))}
             </div>
           )}
-          {
-            token ? <button onClick={() => deletePost(post._id)} >삭제</button> : null
-          }
         </div>
       ))}
     </div>
