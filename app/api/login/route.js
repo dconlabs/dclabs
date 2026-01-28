@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import connectDB from '@/lib/db'; // ★ 본인의 DB 연결 파일 경로 확인
-import bcrypt from 'bcryptjs'; // ★ bcryptjs 사용 필수
+import connectDB from '@/lib/db';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 export async function POST(request) {
@@ -18,13 +18,13 @@ export async function POST(request) {
       return NextResponse.json({ message: '관리자 계정 없음' }, { status: 404 });
     }
 
-    console.log("--- 디버깅 ---");
-    console.log("입력한 비번:", password);
-    console.log("DB 해시값:", adminUser.password);
+    // console.log("--- 디버깅 ---");
+    // console.log("입력한 비번:", password);
+    // console.log("DB 해시값:", adminUser.password);
     
     // 3. 비밀번호 검증
     const isValid = await bcrypt.compare(password, adminUser.password);
-    console.log("일치 여부:", isValid); // 여기가 false면 해시값이 잘못된 것
+    //console.log("일치 여부:", isValid);
 
     if (!isValid) {
       return NextResponse.json({ message: '비밀번호를 다시 확인해주세요.' }, { status: 401 });

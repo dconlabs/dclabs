@@ -13,17 +13,6 @@ export default async function RootLayout({ children }) {
   const cookieStore = await cookies();
   const token = cookieStore.get('admin_token')?.value;
 
-  let isAdmin = false;
-  if (token) {
-    try {
-      const secret = new TextEncoder().encode(process.env.JWT_SECRET);
-      await jwtVerify(token, secret);
-      isAdmin = true;
-    } catch (e) {
-      isAdmin = false;
-    }
-  }
-
   return (
     <html lang="ko">
       <body>

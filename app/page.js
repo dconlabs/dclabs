@@ -2,12 +2,15 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import connectDB from "@/lib/db";
 import NewsCard from './components/newsCard';
+import { cookies } from 'next/headers';
 
 export default async function Home() {
 
   const client = await connectDB;
   const result = await client.db("news").collection("post").find().toArray();
 
+  const cookieStore =await cookies();
+  const hasToken = cookieStore.get('admin_token')?.value;
   //console.log(result);
 
   return (
@@ -15,9 +18,11 @@ export default async function Home() {
       test 테스트
       <Link href="/testPage">testPage</Link>
 
-      <NewsCard newsData={JSON.parse(JSON.stringify(result))} />
+      <NewsCard newsData={JSON.parse(JSON.stringify(result))} token={hasToken}/>
 
-      <Link href="/post">post</Link>
+      {
+        hasToken ? <Link href="/post">post</Link> : null
+      }
     </div>
   );
 }
