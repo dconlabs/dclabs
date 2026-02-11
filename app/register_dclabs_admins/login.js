@@ -30,7 +30,7 @@ export default function Login() {
 
   return (
       <div>
-        login
+        <span>로그인</span>
         <input type="text" value={pw} onChange={(e) => setPw(e.target.value)} />
         <button onClick={handleLogin}>Login</button>
       </div>

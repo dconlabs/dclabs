@@ -9,6 +9,7 @@ export default function Post() {
   
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
+  const [source, setSource] = useState("dclabs");
 
   // 1. 파일 관리를 위한 상태 (여기가 핵심!)
   // previews: 보여줄 이미지 URL들
@@ -90,6 +91,7 @@ export default function Post() {
       const res = await axios.post("/api/admin", { 
         title, 
         contents, 
+        source,
         images: finalImageUrls
       });
 
@@ -102,7 +104,7 @@ export default function Post() {
 
     } catch (error) {
       console.error(error);
-      alert("업로드 실패!");
+      alert("업로드에 실패했습니다. 작성 권한이 없거나 관리자로 로그인 하십시오.");
     } finally {
       setIsUploading(false); 
     }

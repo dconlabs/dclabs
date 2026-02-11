@@ -1,5 +1,3 @@
-import Login from './components/login';
-import LogoutButton from './components/logoutBtn';
 import "./globals.css";
 import { cookies } from 'next/headers'
 
@@ -16,9 +14,6 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body>
-        <div>
-          {token ? <LogoutButton/> : <Login/>}
-        </div>
         {children}
       </body>
     </html>

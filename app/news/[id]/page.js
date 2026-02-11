@@ -14,7 +14,9 @@ export default async function NewsDetail({ params }) {
   const cookieStore = await cookies();
   const token = cookieStore.get('admin_token')?.value;
 
-  console.log(post);
+  if (!post) {
+    return <div>게시글을 찾을 수 없음 아직 연결 못함</div>;
+  }
 
   return (
     <div>
@@ -27,7 +29,7 @@ export default async function NewsDetail({ params }) {
         ))
       )}
       <div>
-        {token ? <Link href={`/edit/${post._id.toString()}`}>수정</Link> : null}
+        {token ? <Link href={`/news/edit/${post._id.toString()}`}>수정</Link> : null}
         {token ? <DeleteBtn id={post._id.toString()} url={"/api/admin"} /> : null}
       </div>
     </div>
