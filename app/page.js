@@ -1,3 +1,5 @@
+export const revalidate = 600;
+
 import styles from "./page.module.css";
 import Link from "next/link";
 import connectDB from "@/lib/db";
