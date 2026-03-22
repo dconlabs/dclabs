@@ -1,5 +1,7 @@
 import "./globals.css";
 import { cookies } from 'next/headers'
+import Header from "./components/header";
+import Footer from "./components/footer";
 
 export const metadata = {
   title: "dclabs",
@@ -13,8 +15,12 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="ko">
-      <body>
-        {children}
+      <body className="layout">
+        <Header />
+        <main className="content">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

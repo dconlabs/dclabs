@@ -1,33 +1,25 @@
 import connectDB from "@/lib/db";
 import { ObjectId } from "mongodb";
 import Link from "next/link";
-import { use } from "react";
 import DeleteBtn from "@/app/components/deleteBtn";
 import { cookies } from "next/headers";
-import connectA2FDB from "@/lib/a2fdb";
-import connectWeirdDB from "@/lib/weird";
 
 export default async function NewsDetail({ params }) {
 
   const { id } = await params;
 
   const client = (await connectDB).db("news");
-  const db2 = (await connectA2FDB).db("a2f_news");
-  const db3 = (await connectWeirdDB).db("weirdlab_news");
+  const newsData = await client.collection("post").find().toArray();
 
-  const [a, b, c] = await Promise.all([
-    client.collection("post").find().toArray(),
-    db2.collection("post").find().toArray(),
-    db3.collection("post").find().toArray()
-  ]);
+  const post = await client
+    .collection("post")
+    .findOne({ _id: new ObjectId(id) });
 
-  const merged = [
-    ...a.map(post => ({ ...post, source: "dclabs" })),
-    ...b.map(post => ({ ...post, source: "a2flux" })),
-    ...c.map(post => ({ ...post, source: "weirdlab" }))
-  ].sort((x, y) => new Date(y.createdAt) - new Date(x.createdAt));
+  const serializedPost = {
+    ...post,
+    _id: post._id.toString(),
+  };
 
-  const post = merged.find(p => p._id.toString() === id);
 
   const cookieStore = await cookies();
   const token = cookieStore.get('admin_token')?.value;
@@ -47,8 +39,10 @@ export default async function NewsDetail({ params }) {
         ))
       )}
       <div>
-        {token ? <Link href={`/news/edit/${post._id.toString()}`}>수정</Link> : null}
-        {token ? <DeleteBtn id={post._id.toString()} url={"/api/admin"} /> : null}
+        {post.source == "dclabs" && token ? <div>
+          <Link href={`/news/edit/${serializedPost._id}`}>수정</Link>
+          <DeleteBtn id={post._id.toString()} url={"/api/admin"} />
+        </div> : null}
       </div>
     </div>
   );

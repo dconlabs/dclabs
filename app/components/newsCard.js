@@ -2,14 +2,14 @@
 
 import { useRouter } from "next/navigation";
 
-export default function NewsCard({ newsData }) {
+export default function NewsCard({ newsData, hasToken }) {
 
   const router = useRouter();
 
   return (
     <div>
       {newsData.map((post) => (
-        <div key={post._id} onClick={() => router.push(`/news/${post._id}`)} post={post}>
+        <div key={post._id} onClick={() => router.push(`/news/${post._id.toString()}`)} post={post}>
           <h2>{post.title}</h2>
           <p>{post.contents}</p>
           {post.images && post.images.length > 0 && (
