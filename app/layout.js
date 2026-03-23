@@ -16,7 +16,6 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body className="layout">
-        <Header />
         <main className="content">
           {children}
         </main>

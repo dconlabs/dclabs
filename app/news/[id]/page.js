@@ -3,6 +3,7 @@ import { ObjectId } from "mongodb";
 import Link from "next/link";
 import DeleteBtn from "@/app/components/deleteBtn";
 import { cookies } from "next/headers";
+import Header from "@/app/components/header";
 
 export default async function NewsDetail({ params }) {
 
@@ -30,6 +31,7 @@ export default async function NewsDetail({ params }) {
 
   return (
     <div>
+      <Header/>
       <Link href="/">뒤로가기</Link>
       <h1>{post.title}</h1>
       <p>{post.contents}</p>

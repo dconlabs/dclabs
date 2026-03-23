@@ -14,6 +14,12 @@ body {
   font-family: "Pretendard", sans-serif;
   background-color: #222;
   color: #fff;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 .layout {
@@ -23,10 +29,8 @@ body {
 }
 
 .content {
-  padding: 0 40px;
   margin: 0 auto;
   flex: 1;
-  max-width: 1480px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -35,9 +39,10 @@ body {
   background: rgba(34, 34, 34, 0.80);
   backdrop-filter: blur(50px);
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
+  z-index: 100;
 }
 
 .header_container {
@@ -84,4 +89,21 @@ body {
   color: #888;
   font-size: 15px;
   font-weight: 400;
+}
+
+#ABOUT,
+#TEAM,
+#OPPORTUNITY,
+#NEWS {
+  scroll-margin-top: 250px;
+}
+
+
+.header_nav .active {
+  opacity: 1;
+}
+
+.header_nav div {
+  opacity: 0.5;
+  transition: all 0.5s ease;
 }
