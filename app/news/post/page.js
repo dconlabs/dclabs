@@ -8,8 +8,14 @@ export default function Post() {
   const router = useRouter();
   
   const [title, setTitle] = useState("");
+  const [enTitle, setEnTitle] = useState("");
+  const [group, setGroup] = useState("");
+  const [uploadDate, setUploadDate] = useState("");
+  const [uploader, setUploader] = useState("");
   const [contents, setContents] = useState("");
   const [source, setSource] = useState("dclabs");
+
+  let categoryList = ["Notice", "Event", "Publication", "Others"]
 
   // 1. 파일 관리를 위한 상태 (여기가 핵심!)
   // previews: 보여줄 이미지 URL들
@@ -90,6 +96,10 @@ export default function Post() {
       // B. 텍스트 + 이미지 URL 저장
       const res = await axios.post("/api/admin", { 
         title, 
+        enTitle,
+        uploadDate,
+        uploader,
+        group,
         contents, 
         source,
         images: finalImageUrls
@@ -119,6 +129,35 @@ export default function Post() {
     processFiles(e.dataTransfer.files);
   };
 
+  const handleDateChange = (e) => {
+    let value = e.target.value;
+    value = value.replace(/\D/g, "");
+    value = value.slice(0, 6);
+
+    let year = value.slice(0, 4);
+    let month = value.slice(4, 6);
+
+    if (month.length === 1) {
+      if (parseInt(month) > 1) {
+        month = "0" + month;
+      }
+    }
+
+    if (month.length === 2) {
+      let monthNum = parseInt(month);
+
+      if (monthNum === 0) month = "01";
+      if (monthNum > 12) month = "12";
+    }
+
+    if (month.length > 0) {
+      value = `${year}.${month}`;
+    } else {
+      value = year;
+    }
+    setUploadDate(value);
+  };
+
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px', fontFamily: 'sans-serif' }}>
       <h1>새 게시글 작성</h1>
@@ -126,10 +165,50 @@ export default function Post() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
         <input 
           type="text" 
-          placeholder="제목"
+          placeholder="한글 제목"
           onChange={(e) => setTitle(e.target.value)}
           style={{ padding: '10px', fontSize: '16px', border: '1px solid #ddd', borderRadius: '5px' }}
         />
+        <input 
+          type="text" 
+          placeholder="영문 제목"
+          onChange={(e) => setEnTitle(e.target.value)}
+          style={{ padding: '10px', fontSize: '16px', border: '1px solid #ddd', borderRadius: '5px' }}
+        />
+        <div>
+          <div>Group</div>
+          <div>
+            <div
+            style={{border: 'none', outline: 'none', fontFamily: 'pretendard', width: '212px', marginBottom: '20px'}}>
+              {group || "그룹, 아래에서 선택"}
+            </div>
+            {
+              categoryList.map((item, index)=>{
+                return (
+                  <div key={index} onClick={() => setGroup(item)}>
+                    {item}
+                  </div>
+                )
+              })
+            }
+          </div>
+        </div>
+        <input 
+          type="text" 
+          placeholder="작성자"
+          onChange={(e) => setUploader(e.target.value)}
+          style={{ padding: '10px', fontSize: '16px', border: '1px solid #ddd', borderRadius: '5px' }}
+        />
+        <div>
+          <div>Date</div>
+          <input 
+            type="text" 
+            placeholder="숫자만(예:2000.12)"
+            value={uploadDate}
+            onChange={handleDateChange}
+            style={{border: 'none', outline: 'none', fontFamily: 'pretendard', width: '212px'}}
+          />
+        </div>
         <textarea 
           placeholder="내용"
           onChange={(e) => setContents(e.target.value)}

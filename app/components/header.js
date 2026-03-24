@@ -1,13 +1,14 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 const NAV_ITEMS = ['ABOUT', 'TEAM', 'OPPORTUNITY', 'NEWS'];
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState('');
   const router = useRouter();
+  const pathname = usePathname();
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -22,6 +23,45 @@ export default function Header() {
     }
   };
 
+  const handleNavClick = (item) => {
+    if (pathname !== '/') {
+      // ✅ 이동 전에 저장
+      sessionStorage.setItem('target-section', item);
+      router.push('/');
+    } else {
+      scrollToSection(item);
+    }
+  };
+
+  // ✅ 홈 진입 시 실행
+  useEffect(() => {
+    if (pathname === '/') {
+      const target = sessionStorage.getItem('target-section');
+
+      if (target) {
+        const tryScroll = () => {
+          const el = document.getElementById(target);
+
+          if (el) {
+            el.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+
+            setActiveSection(target);
+            sessionStorage.removeItem('target-section');
+          } else {
+            // DOM 아직 안 떴으면 다시 시도
+            setTimeout(tryScroll, 100);
+          }
+        };
+
+        setTimeout(tryScroll, 100);
+      }
+    }
+  }, [pathname]);
+
+  // 기존 IntersectionObserver
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -60,27 +100,30 @@ export default function Header() {
     <header className='header'>
       <div className='header_container'>
 
-        <div onClick={() => {
-          router.push('/');
-          setActiveSection('');
+        {/* 로고 */}
+        <div
+          onClick={() => {
+            router.push('/');
+            setActiveSection('');
 
-          requestAnimationFrame(() => {
-            window.scrollTo({
-              top: 0,
-              behavior: 'smooth',
+            requestAnimationFrame(() => {
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              });
             });
-          });
-        }}
-        style={{ cursor: 'pointer' }}
+          }}
+          style={{ cursor: 'pointer' }}
         >
           <img src='/logo.png' height={80} alt="logo" />
         </div>
 
+        {/* 네비 */}
         <div className='header_nav'>
           {NAV_ITEMS.map((item) => (
             <div 
               key={item}
-              onClick={() => scrollToSection(item)}
+              onClick={() => handleNavClick(item)}
               className={activeSection === item ? 'active' : ''}
               style={{ cursor: 'pointer' }}
             >

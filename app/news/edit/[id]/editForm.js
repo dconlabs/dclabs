@@ -3,12 +3,20 @@
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState, useRef } from "react";
+import Link from "next/link";
 
 export default function EditForm({ post }) {
   const router = useRouter();
 
   const [title, setTitle] = useState(post.title);
+  const [enTitle, setEnTitle] = useState(post.enTitle);
+  const [group, setGroup] = useState(post.group);
+  const [uploadDate, setUploadDate] = useState(post.uploadDate);
+  const [uploader, setUploader] = useState(post.uploader);
   const [contents, setContents] = useState(post.contents);
+  const [source, setSource] = useState(post.source);
+
+  let categoryList = ["Notice", "Event", "Publication", "Others"]
 
   // existingImages: 서버에 이미 올라가 있는 이미지 URL들
   const [existingImages, setExistingImages] = useState(post.images || []);
@@ -77,7 +85,12 @@ export default function EditForm({ post }) {
       const res = await axios.put("/api/admin", {
         id: post._id,
         title,
+        enTitle,
+        group,
+        uploadDate,
+        uploader,
         contents,
+        source,
         images: finalImages
       });
 
@@ -106,8 +119,40 @@ export default function EditForm({ post }) {
     processFiles(e.dataTransfer.files);
   };
 
+  const handleDateChange = (e) => {
+    let value = e.target.value;
+    value = value.replace(/\D/g, "");
+    value = value.slice(0, 6);
+
+    let year = value.slice(0, 4);
+    let month = value.slice(4, 6);
+
+    if (month.length === 1) {
+      if (parseInt(month) > 1) {
+        month = "0" + month;
+      }
+    }
+
+    if (month.length === 2) {
+      let monthNum = parseInt(month);
+
+      if (monthNum === 0) month = "01";
+      if (monthNum > 12) month = "12";
+    }
+
+    if (month.length > 0) {
+      value = `${year}.${month}`;
+    } else {
+      value = year;
+    }
+    setUploadDate(value);
+  };
+
   return (
     <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+
+      <Link href={`/news/${post._id.toString()}`}>뒤로가기</Link>
+
       <h1>게시글 수정</h1>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
@@ -116,6 +161,48 @@ export default function EditForm({ post }) {
           type="text" 
           value={title} 
           onChange={(e) => setTitle(e.target.value)} 
+          style={{ padding: '8px' }}
+        />
+        <label>영문 제목</label>
+        <input 
+          type="text" 
+          value={enTitle} 
+          onChange={(e) => setEnTitle(e.target.value)} 
+          style={{ padding: '8px' }}
+        />
+        <div>
+          <div>Group</div>
+          <div>
+            <div
+            style={{border: 'none', outline: 'none', fontFamily: 'pretendard', width: '212px', marginBottom: '20px'}}>
+              {group || "그룹, 아래에서 선택"}
+            </div>
+            {
+              categoryList.map((item, index)=>{
+                return (
+                  <div key={index} onClick={() => setGroup(item)}>
+                    {item}
+                  </div>
+                )
+              })
+            }
+          </div>
+        </div>
+        <div>
+          <div>Date</div>
+          <input 
+            type="text" 
+            placeholder="숫자만(예:2000.12)"
+            value={uploadDate}
+            onChange={handleDateChange}
+            style={{border: 'none', outline: 'none', fontFamily: 'pretendard', width: '212px'}}
+          />
+        </div>
+        <label>업로더</label>
+        <input 
+          type="text" 
+          value={uploader} 
+          onChange={(e) => setUploader(e.target.value)} 
           style={{ padding: '8px' }}
         />
         <label>내용</label>

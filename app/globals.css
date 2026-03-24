@@ -22,6 +22,14 @@ html::-webkit-scrollbar {
   display: none;
 }
 
+.color000 {
+  color: #000;
+}
+
+.color888 {
+  color: #888;
+}
+
 .layout {
   display: flex;
   flex-direction: column;

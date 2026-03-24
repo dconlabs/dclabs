@@ -4,6 +4,8 @@ import Link from "next/link";
 import DeleteBtn from "@/app/components/deleteBtn";
 import { cookies } from "next/headers";
 import Header from "@/app/components/header";
+import Back from "@/app/components/icons/back";
+import styles from "./detail.module.css";
 
 export default async function NewsDetail({ params }) {
 
@@ -21,9 +23,14 @@ export default async function NewsDetail({ params }) {
     _id: post._id.toString(),
   };
 
-
   const cookieStore = await cookies();
   const token = cookieStore.get('admin_token')?.value;
+
+  const currentIndex = newsData.findIndex(
+    (item) => item._id.toString() === id
+  );
+  const prevPost = newsData[currentIndex + 1] || null;
+  const nextPost = newsData[currentIndex - 1] || null;
 
   if (!post) {
     return <div>게시글을 찾을 수 없음</div>;
@@ -32,14 +39,54 @@ export default async function NewsDetail({ params }) {
   return (
     <div>
       <Header/>
-      <Link href="/">뒤로가기</Link>
-      <h1>{post.title}</h1>
-      <p>{post.contents}</p>
-      {post.images && post.images.length > 0 && (
-        post.images.map((imgUrl, idx) => (
-          <img key={idx} src={imgUrl} alt="" style={{ width: '300px', height: '300px', objectFit: 'cover', marginRight: '20px' }} />
-        ))
-      )}
+
+      <div className={styles.detail_container}>
+
+        <Link href="/"><Back/></Link>
+
+        <div className={styles.content_container}>
+          <div className={styles.title_container}>
+            <div className={styles.title}>{post.title}</div>
+            <div className={styles.enTitle}>{post.enTitle}</div>
+            <div className={styles.date_container}>
+              <div>{post.uploadDate}</div>
+              <div>|</div>
+              <div>{post.uploader} 씀</div>
+            </div>
+            <div className={styles.content}>{post.contents}</div>
+          </div>
+
+          <div className={styles.img_container}>
+            {post.images && post.images.length > 0 && (
+              post.images.map((imgUrl, idx) => (
+                <img key={idx} src={imgUrl}/>
+              ))
+            )}
+          </div>
+        </div>
+
+        <div className={styles.nav_container}>
+          {nextPost ? (
+            <div className={styles.nav_item} style={!prevPost ? {borderBottom:'1px solid #888'} : null}>
+              <Link href={`/news/${nextPost._id.toString()}`} className={styles.nav_link}>
+                <div className={styles.nav_text}>다음글</div>
+                <div className={styles.nav_title}>{nextPost.title}</div>
+              </Link>
+            </div>
+          ) : null
+          }
+          {prevPost ? (
+            <div className={styles.nav_item} style={{borderBottom:'1px solid #888'}}>
+              <Link href={`/news/${prevPost._id.toString()}`} className={styles.nav_link}>
+                <div className={styles.nav_text}>이전글</div>
+                <div className={styles.nav_title}>{prevPost.title}</div>
+              </Link>
+            </div>
+          ) : null
+          }
+        </div>
+      </div>
+
       <div>
         {post.source == "dclabs" && token ? <div>
           <Link href={`/news/edit/${serializedPost._id}`}>수정</Link>

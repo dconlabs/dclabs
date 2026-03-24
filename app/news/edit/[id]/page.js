@@ -1,7 +1,6 @@
 import connectDB from "@/lib/db";
 import { ObjectId } from "mongodb";
 import EditForm from "./editForm";
-import Link from "next/link";
 
 export default async function NewsDetail({ params }) {
 
@@ -11,7 +10,6 @@ export default async function NewsDetail({ params }) {
 
   return (
     <div>
-      <Link href={`/news/${post._id.toString()}`}>뒤로가기</Link>
       <EditForm post={JSON.parse(JSON.stringify(post))} />
     </div>
   );
