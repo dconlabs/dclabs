@@ -8,6 +8,7 @@ import { cookies } from 'next/headers';
 import ScrollObserver from './components/scrollObserver';
 import Header from './components/header';
 import ResearchField from './components/researchField';
+import About from './components/about';
 
 export default async function Home() {
 
@@ -47,6 +48,7 @@ export default async function Home() {
       <div id="ABOUT" className="observe_wrapper">
         <div className="observe_content">
           <div className={styles.sub_title}>About</div>
+          <About/>
         </div>
       </div>
 

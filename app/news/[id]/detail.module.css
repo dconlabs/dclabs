@@ -19,6 +19,7 @@
   gap: 30px;
   margin-top: 60px;
   max-width: 849px;
+  width: 100%;
 }
 
 .title {
@@ -46,6 +47,7 @@
   font-weight: 400;
   line-height: 30px;
   margin-top: 30px;
+  word-break: break-all;
 }
 
 .img_container {
@@ -53,6 +55,8 @@
   flex-direction: column;
   gap: 30px;
   margin-top: 60px;
+  max-width: 451px;
+  width: 100%;
 }
 
 .img_container img {
@@ -93,4 +97,99 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
+}
+
+.drop_field {
+  width: 100%;
+  max-width: 451px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  margin-bottom: 40px;
+  color: #888;
+  transition: 0.4s;
+}
+
+.delete_btn {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.pro_detail_content_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.pro_detail_img_container2 {
+  position: relative;  
+  width: 100%;
+}
+
+.submit_btn {
+  width: 100%; 
+  padding: 20px; 
+  color: white; 
+  border: none; 
+  font-size: 18px; 
+  font-weight: 500;
+  font-family: 'pretendard';
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.form_style {
+  font-family: 'pretendard';
+  background: #222;
+  border: none;
+  outline: none;
+  color: #FFF;
+}
+
+.date_form_style {
+  font-family: 'pretendard';
+  background: none;
+  border: none;
+  outline: none;
+  color: #FFF;
+  font-size: 20px;
+  width: 100px;
+}
+
+.category_container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.category_item {
+  background: #888;
+  border: 1px solid #888;
+  font-size: 18px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.category_item_active {
+  background: #222;
+  border: 1px solid #888;
+  font-size: 18px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: 0.4s;
 }

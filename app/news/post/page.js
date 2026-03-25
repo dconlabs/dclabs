@@ -3,13 +3,17 @@
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState, useRef } from "react";
+import Header from "@/app/components/header";
+import styles from "../[id]/detail.module.css";
+import Back from "@/app/components/icons/back";
+import Link from "next/link";
 
 export default function Post() {
   const router = useRouter();
   
   const [title, setTitle] = useState("");
   const [enTitle, setEnTitle] = useState("");
-  const [group, setGroup] = useState("");
+  const [group, setGroup] = useState("Notice");
   const [uploadDate, setUploadDate] = useState("");
   const [uploader, setUploader] = useState("");
   const [contents, setContents] = useState("");
@@ -67,8 +71,8 @@ export default function Post() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!title || !contents) {
-      alert("제목과 내용을 입력해주세요.");
+    if (!title || !contents || !group || !uploadDate || !uploader) {
+      alert("모든 항목을 입력해주세요.");
       return;
     }
 
@@ -159,158 +163,117 @@ export default function Post() {
   };
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px', fontFamily: 'sans-serif' }}>
-      <h1>새 게시글 작성</h1>
+    <div>
+      <Header/>
       
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-        <input 
-          type="text" 
-          placeholder="한글 제목"
-          onChange={(e) => setTitle(e.target.value)}
-          style={{ padding: '10px', fontSize: '16px', border: '1px solid #ddd', borderRadius: '5px' }}
-        />
-        <input 
-          type="text" 
-          placeholder="영문 제목"
-          onChange={(e) => setEnTitle(e.target.value)}
-          style={{ padding: '10px', fontSize: '16px', border: '1px solid #ddd', borderRadius: '5px' }}
-        />
-        <div>
-          <div>Group</div>
-          <div>
-            <div
-            style={{border: 'none', outline: 'none', fontFamily: 'pretendard', width: '212px', marginBottom: '20px'}}>
-              {group || "그룹, 아래에서 선택"}
+      <div className={styles.detail_container}>
+
+        <Link href="/"><Back/></Link>
+
+        <div className={styles.content_container}>
+          <div className={styles.title_container}>
+            <input 
+              type="text" 
+              placeholder="한글 제목"
+              onChange={(e) => setTitle(e.target.value)}
+              className={styles.title}
+              style={{fontFamily:'pretendard', background:'none', border:'none', outline:'none', color:'#FFF'}}
+            />
+            <input 
+              type="text" 
+              placeholder="영문 제목"
+              onChange={(e) => setEnTitle(e.target.value)}
+              className={styles.enTitle}
+              style={{fontFamily:'pretendard', background:'none', border:'none', outline:'none', color:'#FFF'}}
+            />
+            <div>
+
+              <div className={styles.category_container}>
+              {
+                categoryList.map((item, index)=>{
+                  return (
+                    <div key={index} onClick={() => setGroup(item)} className={group === item ? styles.category_item_active : styles.category_item}>
+                      {item}
+                    </div>
+                  )
+                })
+              }
+              </div>
+
             </div>
-            {
-              categoryList.map((item, index)=>{
-                return (
-                  <div key={index} onClick={() => setGroup(item)}>
-                    {item}
-                  </div>
-                )
-              })
-            }
-          </div>
-        </div>
-        <input 
-          type="text" 
-          placeholder="작성자"
-          onChange={(e) => setUploader(e.target.value)}
-          style={{ padding: '10px', fontSize: '16px', border: '1px solid #ddd', borderRadius: '5px' }}
-        />
-        <div>
-          <div>Date</div>
-          <input 
-            type="text" 
-            placeholder="숫자만(예:2000.12)"
-            value={uploadDate}
-            onChange={handleDateChange}
-            style={{border: 'none', outline: 'none', fontFamily: 'pretendard', width: '212px'}}
-          />
-        </div>
-        <textarea 
-          placeholder="내용"
-          onChange={(e) => setContents(e.target.value)}
-          style={{ padding: '10px', fontSize: '16px', minHeight: '150px', border: '1px solid #ddd', borderRadius: '5px' }}
-        />
-      </div>
-
-      {/* 드래그 앤 드롭 영역 */}
-      <div
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
-        onDrop={handleDrop}
-        onClick={() => inputFileRef.current.click()}
-        style={{
-          width: '100%',
-          height: '150px',
-          border: isDragging ? '3px solid #0070f3' : '2px dashed #ccc',
-          backgroundColor: isDragging ? '#eaf4ff' : '#fafafa',
-          borderRadius: '12px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          cursor: 'pointer',
-          marginBottom: '20px',
-          color: '#666',
-          transition: 'all 0.2s'
-        }}
-      >
-        <p style={{ fontWeight: 'bold' }}>이미지 드래그 앤 드롭</p>
-        <p style={{ fontSize: '12px' }}>또는 클릭하여 선택</p>
-      </div>
-
-      <input 
-        ref={inputFileRef} 
-        type="file"
-        accept="image/*"
-        multiple
-        onChange={handleFileChange}
-        style={{ display: 'none' }}
-      />
-
-      {/* 💡 미리보기 그리드 (여기에 삭제 버튼 추가됨)
-      */}
-      {previews.length > 0 && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px', marginBottom: '20px' }}>
-          {previews.map((url, index) => (
-            <div key={index} style={{ position: 'relative', width: '100%', aspectRatio: '1/1' }}>
-              
-              {/* 이미지 */}
-              <img 
-                src={url} 
-                alt={`preview-${index}`}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px', border: '1px solid #eee' }} 
+            <div className={styles.date_container}>
+              <input 
+                type="text" 
+                placeholder="예:2000.12"
+                value={uploadDate}
+                onChange={handleDateChange}
+                className={styles.date_form_style}
               />
-
-              {/* ❌ 삭제 버튼 */}
-              <button
-                onClick={() => removeImage(index)}
-                style={{
-                  position: 'absolute',
-                  top: '5px',
-                  right: '5px',
-                  background: 'rgba(0,0,0,0.6)',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '50%',
-                  width: '24px',
-                  height: '24px',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '14px',
-                  fontWeight: 'bold'
+              <div>|</div>
+              <input 
+                type="text" 
+                placeholder="작성자"
+                onChange={(e) => setUploader(e.target.value)}
+                className={styles.date_form_style}
+              /> 씀</div>
+              <textarea 
+                placeholder="내용"
+                onChange={(e) => setContents(e.target.value)}
+                className={styles.content}
+                style={{height:'160px', resize:'none', fontFamily:'pretendard', background:'none', border:'none', outline:'none', color:'#FFF'}}
+              />
+              <button 
+                onClick={handleSubmit} 
+                disabled={isUploading}
+                className={styles.submit_btn}
+                style={{ 
+                  backgroundColor: isUploading ? '#ccc' : '#444', 
+                  cursor: isUploading ? 'not-allowed' : 'pointer'
                 }}
               >
-                X
+                {isUploading ? '뉴스 업로드 중...' : '뉴스 등록하기'}
               </button>
+          </div>
+
+          <div className={styles.img_container}>
+            <div
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+              onClick={() => inputFileRef.current.click()}
+              className={styles.drop_field}
+              style={{
+                border: isDragging ? '1px solid #fff' : '1px dashed #888',
+                backgroundColor: isDragging ? '#333' : '#222',
+              }}
+            >
+              <div>이미지 드래그 앤 드롭</div>
+              <div>또는 클릭하여 선택</div>
             </div>
-          ))}
+
+            <input 
+              ref={inputFileRef} 
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={handleFileChange}
+              style={{ display: 'none' }}
+            />
+
+            {previews.length > 0 && (
+              <div className={styles.pro_detail_content_container}>
+                {previews.map((url, index) => (
+                  <div key={index} className={styles.pro_detail_img_container2}>
+                    <img src={url}/>
+                    <button onClick={() => removeImage(index)} className={styles.delete_btn}>X</button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
         </div>
-      )}
-
-      <button 
-        onClick={handleSubmit} 
-        disabled={isUploading}
-        style={{ 
-          width: '100%', 
-          padding: '15px', 
-          backgroundColor: isUploading ? '#ccc' : '#0070f3', 
-          color: 'white', 
-          border: 'none', 
-          borderRadius: '8px', 
-          fontSize: '16px', 
-          fontWeight: 'bold',
-          cursor: isUploading ? 'not-allowed' : 'pointer'
-        }}
-      >
-        {isUploading ? '업로드 및 저장 중...' : '게시글 등록하기'}
-      </button>
-
+      </div>
     </div>
   );
 }
