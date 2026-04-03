@@ -23,9 +23,13 @@
 
 .main_copy_en span {
   color: #000;
+  background: #E4FC28;
+  height: 59px;
+  display: inline-block;
+  line-height: 59px;
 }
 
-.backColor {
+/* .backColor {
   width: 477px;
   height: 59px;
   background: #E4FC28;
@@ -33,12 +37,16 @@
   top: 75;
   right: 548;
   z-index: -1;
-}
+} */
 
 .main_copy_kr {
   font-size: 24px;
   font-weight: 400;
   line-height: 36px;
+}
+
+.main_copy_kr span {
+  display: block;
 }
 
 .sub_title {
@@ -126,9 +134,8 @@
   color: #888;
   font-size: 20px;
   font-weight: 400;
-  line-height: 30px;
+  line-height: 26px;
 }
-
 
 .introduce_text {
   font-size: 40px;
@@ -178,7 +185,7 @@
 }
 
 .research_title_en {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   transition: 0.5s;
   margin-top: 10px;
@@ -186,7 +193,7 @@
 
 .research_title_en_hidden {
   color: #888;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   transition: 0.5s;
   margin-top: 10px;
@@ -226,7 +233,7 @@
   color: #888;
   font-size: 20px;
   font-weight: 400;
-  line-height: 30px;
+  line-height: 26px;
   margin-top: 10px;
 }
 
@@ -364,4 +371,41 @@
   padding: 5px 16px;
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 450px) {
+  .main_container {
+    padding: 0 24px;
+    margin: 150px auto 100px auto;
+    gap: 100px;
+  }
+
+  .main_copy {
+    gap: 30px;
+  }
+
+  .main_copy_en {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 42px;
+    position: relative;
+  }
+
+  .main_copy_en span {
+    color: #000;
+    background: #E4FC28;
+    height: 36px;
+    display: inline-block;
+    line-height: 36px;
+  }
+
+  .main_copy_kr {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+
+  .main_copy_kr span {
+    display: inline;
+  }
 }

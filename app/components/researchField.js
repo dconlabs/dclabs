@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function ResearchField() {
 
-  let [nowShow, setNowShow] = useState(0);
+  let [nowShow, setNowShow] = useState('');
   const research_field = [
     {
       title: "프로덕트 디자이너",
@@ -85,7 +85,7 @@ export default function ResearchField() {
   return (
     <div style={{marginTop:'60px'}}>
       {research_field.map((item, index) => (
-        <div key={index} className={styles.research_container} onClick={() => setNowShow(index)}>
+        <div key={index} className={styles.research_container} onClick={() => nowShow === index ? setNowShow('') : setNowShow(index)}>
           <div className={styles.research_title_container}>
             <div className={nowShow === index ? styles.research_title : styles.research_title_hidden}>{item.title}</div>
             <div className={nowShow === index ? styles.research_title_en : styles.research_title_en_hidden}>{item.enTitle}</div>

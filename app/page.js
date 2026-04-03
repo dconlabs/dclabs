@@ -8,7 +8,7 @@ import { cookies } from 'next/headers';
 import ScrollObserver from './components/scrollObserver';
 import Header from './components/header';
 import ResearchField from './components/researchField';
-import About from './components/about';
+import Education from './components/education';
 
 export default async function Home() {
 
@@ -22,8 +22,6 @@ export default async function Home() {
 
   const cookieStore =await cookies();
   const hasToken = cookieStore.get('admin_token')?.value;
-
-  let nav = ['ABOUT', 'TEAM', 'OPPORTUNITY', 'NEWS']
 
   //console.log(newsData);
 
@@ -40,15 +38,15 @@ export default async function Home() {
             <div className={styles.backColor}/>
           </div>
           <div className={styles.main_copy_kr}>
-            우리는 디지털 스펙트럼 안에서 논리와 감성의 교차점을 탐구합니다.<br/>UX/UI 및 BX 분야에 특화되어 의미 있는 인터랙션과 실체 있는 브랜드<br/>아이덴티티를 설계하며, 디지털 경험의 미래를 만들어갈 혁신을 주도합니다.
+            <span>우리는 디지털 스펙트럼 안에서 논리와 감성의 교차점을 탐구합니다.</span><span>UX/UI 및 BX 분야에 특화되어 의미 있는 인터랙션과 실체 있는 브랜드</span><span>아이덴티티를 설계하며, 디지털 경험의 미래를 만들어갈 혁신을 주도합니다.</span>
           </div>
         </div>
       </div>
 
-      <div id="ABOUT" className="observe_wrapper">
+      <div id="EDUCATION" className="observe_wrapper">
         <div className="observe_content">
-          <div className={styles.sub_title}>About</div>
-          <About/>
+          <div className={styles.sub_title}>EDUCATION</div>
+          <Education/>
         </div>
       </div>
 
@@ -103,9 +101,9 @@ export default async function Home() {
         </div>
       </div>
 
-      <div id="OPPORTUNITY" className="observe_wrapper">
+      <div id="OPPORTUNITIES" className="observe_wrapper">
         <div className="observe_content">
-          <div className={styles.sub_title}>OPPORTUNITY</div>
+          <div className={styles.sub_title}>OPPORTUNITIES</div>
           <ResearchField/>
         </div>
       </div>
