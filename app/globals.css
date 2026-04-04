@@ -230,4 +230,31 @@ html::-webkit-scrollbar {
     color: #888;
     transition: all 0.5s ease;
   }
+
+  .footer_container {
+    flex-direction: column;
+    padding: 30px 24px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .footer-copyright {
+    color: #888;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
+  }
 }

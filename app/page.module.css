@@ -153,6 +153,10 @@
   line-height: 32px;
 }
 
+.research_mt {
+  margin-top: 60px;
+}
+
 .research_container {
   display: flex;
   gap: 40px;
@@ -161,6 +165,11 @@
   border-top: 1px solid #888;
   cursor: pointer;
   align-items: start;
+}
+
+.research_title_box {
+  display: flex;
+  flex-direction: column;
 }
 
 .research_title {
@@ -376,8 +385,8 @@
 @media screen and (max-width: 450px) {
   .main_container {
     padding: 0 24px;
-    margin: 150px auto 100px auto;
     gap: 100px;
+    margin: 150px auto 100px auto;
   }
 
   .main_copy {
@@ -386,26 +395,118 @@
 
   .main_copy_en {
     font-size: 36px;
-    font-weight: 600;
     line-height: 42px;
-    position: relative;
   }
 
   .main_copy_en span {
-    color: #000;
-    background: #E4FC28;
     height: 36px;
-    display: inline-block;
     line-height: 36px;
   }
 
   .main_copy_kr {
     font-size: 18px;
-    font-weight: 400;
     line-height: 25px;
   }
 
   .main_copy_kr span {
     display: inline;
+  }
+
+  .sub_title {
+    font-size: 34px;
+  }
+
+  .research_mt {
+    margin-top: 30px;
+  }
+
+  .research_container {
+    gap: 40px;
+    padding: 20px 0;
+  }
+
+  .research_title_box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .research_title {
+    font-size: 20px;
+    line-height: 38px;
+  }
+
+  .research_title_hidden {
+    font-size: 20px;
+    line-height: 38px;
+  }
+
+  .research_title_en {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .research_title_en_hidden {
+    color: #888;
+    font-size: 20px;
+    margin-top: 0px;
+  }
+
+  .research_title_container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .research_desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 20px;
+  }
+
+  .research_desc_en {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 10px;
+  }
+
+  .category_container {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 30px;
+  }
+
+  .news_card_container {
+    padding: 20px 0;
+    gap: 30px;
+  }
+
+  .news_card_text {
+    gap: 10px;
+  }
+
+  .news_card_title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .news_card_enTitle {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .news_card_contents {
+    display: none;
+  }
+
+  .news_card_date {
+    font-size: 16px;
+    margin-top: 40px;
+  }
+
+  .news_card_img {
+    max-width: 150px;
+    max-height: 200px;
+    object-fit: cover;
   }
 }

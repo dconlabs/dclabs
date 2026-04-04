@@ -44,6 +44,15 @@ export default async function NewsDetail({ params }) {
 
         <Link href="/"><Back/></Link>
 
+        {
+          post.source == "dclabs" && token ? 
+          <div className={styles.edit_delete_container}>
+            <Link href={`/news/edit/${serializedPost._id}`} className={styles.edit_btn}>수정하기</Link>
+            <DeleteBtn id={post._id.toString()} url={"/api/admin"}/>
+          </div> : null
+        }
+
+
         <div className={styles.content_container}>
           <div className={styles.title_container}>
             <div className={styles.title}>{post.title}</div>
@@ -51,12 +60,29 @@ export default async function NewsDetail({ params }) {
             <div className={styles.date_container}>
               <div>{post.uploadDate}</div>
               <div>|</div>
-              <div>{post.uploader} 씀</div>
+              <div>{post.uploader}</div>
+            </div>
+            <div className={styles.mobile_img_container}>
+              {post.images && post.images.length == 1 ? (
+                post.images.map((imgUrl, idx) => (
+                  <div key={idx} className={styles.mobile_img_single}>
+                    <img src={imgUrl}/>
+                  </div>
+                ))
+              ) : (
+                post.images && post.images.length > 0 && (
+                  post.images.map((imgUrl, idx) => (
+                    <div key={idx} className={styles.mobile_img_multi}>
+                      <img src={imgUrl}/>
+                    </div>
+                  ))
+                )
+              )}
             </div>
             <div className={styles.content}>{post.contents}</div>
           </div>
 
-          <div className={styles.img_container}>
+          <div className={styles.img_container_view}>
             {post.images && post.images.length > 0 && (
               post.images.map((imgUrl, idx) => (
                 <img key={idx} src={imgUrl}/>
@@ -87,12 +113,6 @@ export default async function NewsDetail({ params }) {
         </div>
       </div>
 
-      <div>
-        {post.source == "dclabs" && token ? <div>
-          <Link href={`/news/edit/${serializedPost._id}`}>수정</Link>
-          <DeleteBtn id={post._id.toString()} url={"/api/admin"} />
-        </div> : null}
-      </div>
     </div>
   );
 }

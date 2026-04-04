@@ -81,14 +81,15 @@ export default function ResearchField() {
     }
   ];
 
-
   return (
-    <div style={{marginTop:'60px'}}>
+    <div className={styles.research_mt}>
       {research_field.map((item, index) => (
         <div key={index} className={styles.research_container} onClick={() => nowShow === index ? setNowShow('') : setNowShow(index)}>
           <div className={styles.research_title_container}>
-            <div className={nowShow === index ? styles.research_title : styles.research_title_hidden}>{item.title}</div>
-            <div className={nowShow === index ? styles.research_title_en : styles.research_title_en_hidden}>{item.enTitle}</div>
+            <div className={styles.research_title_box}>
+              <div className={nowShow === index ? styles.research_title : styles.research_title_hidden}>{item.title}</div>
+              <div className={nowShow === index ? styles.research_title_en : styles.research_title_en_hidden}>{item.enTitle}</div>
+            </div>
             
             <div className={nowShow === index ? styles.accordion_open : styles.accordion_closed}>
               <div className={styles.accordion_inner}>

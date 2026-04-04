@@ -113,7 +113,6 @@ export default function EditForm({ post }) {
     }
   };
 
-  // 드래그 앤 드롭 핸들러
   const handleDragOver = (e) => { e.preventDefault(); setIsDragging(true); };
   const handleDragLeave = (e) => { e.preventDefault(); setIsDragging(false); };
   const handleDrop = (e) => {
@@ -123,31 +122,20 @@ export default function EditForm({ post }) {
   };
 
   const handleDateChange = (e) => {
-    let value = e.target.value;
-    value = value.replace(/\D/g, "");
-    value = value.slice(0, 6);
+    let value = e.target.value.replace(/\D/g, "").slice(0, 8);
 
     let year = value.slice(0, 4);
     let month = value.slice(4, 6);
+    let day = value.slice(6, 8);
 
-    if (month.length === 1) {
-      if (parseInt(month) > 1) {
-        month = "0" + month;
-      }
-    }
-
-    if (month.length === 2) {
-      let monthNum = parseInt(month);
-
-      if (monthNum === 0) month = "01";
-      if (monthNum > 12) month = "12";
-    }
-
-    if (month.length > 0) {
+    if (value.length > 6) {
+      value = `${year}.${month}.${day}`;
+    } else if (value.length > 4) {
       value = `${year}.${month}`;
     } else {
       value = year;
     }
+
     setUploadDate(value);
   };
 
@@ -196,7 +184,7 @@ export default function EditForm({ post }) {
             <div className={styles.date_container}>
               <input 
                 type="text" 
-                placeholder="예:2000.12"
+                placeholder="예:2000.12.30"
                 value={uploadDate}
                 onChange={handleDateChange}
                 className={styles.date_form_style}
@@ -208,7 +196,7 @@ export default function EditForm({ post }) {
                 value={uploader}
                 onChange={(e) => setUploader(e.target.value)}
                 className={styles.date_form_style}
-              /> 씀</div>
+              /></div>
               <textarea 
                 placeholder="내용"
                 value={contents}

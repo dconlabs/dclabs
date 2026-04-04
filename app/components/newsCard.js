@@ -16,20 +16,17 @@ export default function NewsCard({ newsData, hasToken }) {
 
   const filtered = nowCategory === "All" ? sorted : sorted.filter(post => post.group === nowCategory);
 
-  // ✅ 페이지 상태
   const [pageNum, setPageNum] = useState(1);
-  const [pageGroup, setPageGroup] = useState(0); // 0: 1~5, 1: 6~10
+  const [pageGroup, setPageGroup] = useState(0);
 
   const POSTS_PER_PAGE = 4;
   const PAGES_PER_GROUP = 5;
 
   const totalPage = Math.ceil(filtered.length / POSTS_PER_PAGE);
 
-  // ✅ 현재 페이지 데이터
   const startIndex = (pageNum - 1) * POSTS_PER_PAGE;
   const currentPosts = filtered.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
-  // ✅ 현재 그룹 페이지 번호 리스트
   const startPage = pageGroup * PAGES_PER_GROUP + 1;
   const endPage = Math.min(startPage + PAGES_PER_GROUP - 1, totalPage);
 
@@ -39,9 +36,8 @@ export default function NewsCard({ newsData, hasToken }) {
   }
 
   return (
-    <div style={{marginTop:'60px'}}>
+    <div className='research_mt'>
 
-      {/* 카테고리 */}
       <div className={styles.category_container}>
         {category.map((item, index) => (
           <div 
@@ -58,7 +54,6 @@ export default function NewsCard({ newsData, hasToken }) {
         ))}
       </div>
 
-      {/* 게시글 */}
       {currentPosts.map((post) => (
         <div 
           key={post._id} 

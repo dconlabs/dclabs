@@ -31,7 +31,17 @@ export default function DeleteBtn({ id, url }) {
 
   return (
     <div>
-      <button onClick={() => deletePost(id, url)} >삭제</button>
+      <button onClick={() => deletePost(id, url)} 
+        style={{
+          color: '#ff5e5eff',
+          background:'#222',
+          width:'89px',
+          height:'41px',
+          fontSize: '16px',
+          fontWeight: 400,
+          border: '1px solid #ff5e5eff',
+          fontFamily: 'pretendard',
+        }}>삭제하기</button>
     </div>
   );
 }
