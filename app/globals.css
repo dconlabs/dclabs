@@ -128,18 +128,6 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-.mobile_hamburger_background {
-  background: rgba(28, 28, 28, 0.5);
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  transform: translateZ(0);
-}
-
-
 @media screen and (max-width: 450px) {
   html {
     overflow-x: hidden;
@@ -256,5 +244,16 @@ html::-webkit-scrollbar {
     font-size: 14px;
     font-weight: 400;
     margin-top: 10px;
+  }
+
+  .mobile_hamburger_background {
+    background: rgba(28, 28, 28, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transform: translateZ(0);
   }
 }

@@ -54,7 +54,7 @@ export default function NewsCard({ newsData, hasToken }) {
         ))}
       </div>
 
-      {currentPosts.map((post) => (
+      {currentPosts.length === 0 ? <div style={{color:'#888'}}>등록된 뉴스가 없습니다.<p>No news has been posted yet.</p></div> : currentPosts.map((post) => (
         <div 
           key={post._id} 
           onClick={() => router.push(`/news/${post._id.toString()}`)} 

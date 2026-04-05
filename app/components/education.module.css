@@ -10,13 +10,12 @@
   font-weight: 600;
   line-height: 30px;
   cursor: pointer;
-  transition: 0.4s;
-  
+  transition: 0.4s;  
 }
 
 .nowCategory {
   background: #E4FC28;
-  color: #000;
+  color: #1c1c1c;
 }
 
 .notNowCategory {
@@ -122,4 +121,124 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 26px;
+}
+
+.curriculum_container {
+  margin-top: 60px;
+}
+
+.undergraduate_popup_container {
+  display: none;
+}
+
+.undergraduate_popup_background {
+  display: none;
+}
+
+@media (max-width: 450px) {
+
+  .curriculum_container {
+    margin-top: 30px;
+  }
+
+  .category_container {
+    margin-bottom: 30px;
+  }
+
+  .category {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+  }
+
+  .undergraduate_container_origin {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .undergraduate_title_container {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .undergraduate_title_kr {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .undergraduate_title_en {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .undergraduate_non_popup_container {
+    display: none;   
+  }
+
+  .undergraduate_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .undergraduate_content_container {
+    gap: 10px;
+  }
+
+  .undergraduate_content_subject_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .undergraduate_content_subject {
+    font-size: 16px;
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+  }
+
+  .undergraduate_content_year {
+    font-size: 16px;
+  }
+
+  .undergraduate_popup_container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0.6px solid #888;
+    background: #1C1C1C;
+    width: calc(100% - 48px);
+    padding: 20px;
+    z-index: 100;
+  }
+
+  .undergraduate_content_subject_kr {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .undergraduate_content_subject_en {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .undergraduate_content_description_kr {
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+
+  .undergraduate_content_description_en {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
 }

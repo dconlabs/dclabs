@@ -1,7 +1,9 @@
 'use client'
 
+import { createPortal } from 'react-dom';
 import styles from './education.module.css'
 import { useState } from 'react'
+import Close from './icons/close';
 
 export default function Education() {
 
@@ -123,7 +125,8 @@ export default function Education() {
       }
     ]
   };
-  let [nowSubject, setNowSubject] = useState('모바일 앱\n기획과 제작');
+  let [nowSubject, setNowSubject] = useState('');
+  let [nowPopup, setNowPopup] = useState(false);
 
   const allSubjects = Object.values(curriculum).flat();
 
@@ -132,14 +135,37 @@ export default function Education() {
   );
 
   return (
-    <div style={{marginTop:'60px'}}>
+    <>
+    {nowPopup && createPortal(
+      <div 
+        className='mobile_hamburger_background' 
+        onClick={() => {setNowPopup(false); setNowSubject('')}} 
+        style={{backdropFilter: 'blur(2px)',
+          WebkitBackdropFilter: 'blur(2px)',}}
+      >
+        <div className={styles.undergraduate_popup_container} onClick={(e)=>e.stopPropagation()}>
+          <div className={styles.undergraduate_content_subject_kr}>
+            <div>{matchedData?.subject_kr}</div>
+            <div style={{cursor: 'pointer'}} onClick={() => {setNowPopup(false); setNowSubject('')}}>
+              <Close />
+            </div>
+          </div>
+          <div className={styles.undergraduate_content_subject_en}>{matchedData?.subject_en}</div>
+          <div className={styles.undergraduate_content_description_kr}>{matchedData?.description_kr}</div>
+          <div className={styles.undergraduate_content_description_en}>{matchedData?.description_en}</div>
+        </div>
+      </div>, document.body
+    )}
+
+    <div className={styles.curriculum_container}>
+
       <div className={styles.category_container}>
         {['Undergraduate', 'Graduate'].map((item) => (
           <div key={item} className={`${styles.category} ${category === item ? styles.nowCategory : styles.notNowCategory}`} onClick={() => setCategory(item)}>{item}</div>
         ))}
       </div>
       {
-        category === 'Undergraduate' ? 
+        category === 'Undergraduate' ?
         <div>
           <div className={styles.undergraduate_title_container}>
             <div className={styles.undergraduate_title_kr}>
@@ -157,7 +183,7 @@ export default function Education() {
                 <div className={styles.undergraduate_content_year}>2-1</div>
                 <div className={styles.undergraduate_content_subject_container}>
                   {curriculum.sophomore_1.map((item, index) => (
-                    <div key={index} className={`${styles.undergraduate_content_subject} ${nowSubject === item.subject_kr ? styles.nowSubject : null}`} onClick={() => setNowSubject(item.subject_kr)}>
+                    <div key={index} className={`${styles.undergraduate_content_subject} ${nowSubject === item.subject_kr ? styles.nowSubject : null}`} onClick={() => {setNowSubject(item.subject_kr); setNowPopup(true)}}>
                       <div>{item.subject_kr}</div>
                     </div>
                   ))}
@@ -168,7 +194,7 @@ export default function Education() {
                 <div className={styles.undergraduate_content_year}>2-2</div>
                 <div className={styles.undergraduate_content_subject_container}>
                   {curriculum.sophomore_2.map((item, index) => (
-                    <div key={index} className={`${styles.undergraduate_content_subject} ${nowSubject === item.subject_kr ? styles.nowSubject : null}`} onClick={() => setNowSubject(item.subject_kr)}>
+                    <div key={index} className={`${styles.undergraduate_content_subject} ${nowSubject === item.subject_kr ? styles.nowSubject : null}`} onClick={() => {setNowSubject(item.subject_kr); setNowPopup(true)}}>
                       <div>{item.subject_kr}</div>
                     </div>
                   ))}
@@ -179,7 +205,7 @@ export default function Education() {
                 <div className={styles.undergraduate_content_year}>3-1</div>
                 <div className={styles.undergraduate_content_subject_container}>
                   {curriculum.junior_1.map((item, index) => (
-                    <div key={index} className={`${styles.undergraduate_content_subject} ${nowSubject === item.subject_kr ? styles.nowSubject : null}`} onClick={() => setNowSubject(item.subject_kr)}>
+                    <div key={index} className={`${styles.undergraduate_content_subject} ${nowSubject === item.subject_kr ? styles.nowSubject : null}`} onClick={() => {setNowSubject(item.subject_kr); setNowPopup(true)}}>
                       <div>{item.subject_kr}</div>
                     </div>
                   ))}
@@ -190,7 +216,7 @@ export default function Education() {
                 <div className={styles.undergraduate_content_year}>3-2</div>
                 <div className={styles.undergraduate_content_subject_container}>
                   {curriculum.junior_2.map((item, index) => (
-                    <div key={index} className={`${styles.undergraduate_content_subject} ${nowSubject === item.subject_kr ? styles.nowSubject : null}`} onClick={() => setNowSubject(item.subject_kr)}>
+                    <div key={index} className={`${styles.undergraduate_content_subject} ${nowSubject === item.subject_kr ? styles.nowSubject : null}`} onClick={() => {setNowSubject(item.subject_kr); setNowPopup(true)}}>
                       <div>{item.subject_kr}</div>
                     </div>
                   ))}
@@ -201,7 +227,7 @@ export default function Education() {
                 <div className={styles.undergraduate_content_year}>4-1</div>
                 <div className={styles.undergraduate_content_subject_container}>
                   {curriculum.senior_1.map((item, index) => (
-                    <div key={index} className={`${styles.undergraduate_content_subject} ${nowSubject === item.subject_kr ? styles.nowSubject : null}`} onClick={() => setNowSubject(item.subject_kr)}>
+                    <div key={index} className={`${styles.undergraduate_content_subject} ${nowSubject === item.subject_kr ? styles.nowSubject : null}`} onClick={() => {setNowSubject(item.subject_kr); setNowPopup(true)}}>
                       <div>{item.subject_kr}</div>
                     </div>
                   ))}
@@ -212,7 +238,7 @@ export default function Education() {
                 <div className={styles.undergraduate_content_year}>4-2</div>
                 <div className={styles.undergraduate_content_subject_container}>
                   {curriculum.senior_2.map((item, index) => (
-                    <div key={index} className={`${styles.undergraduate_content_subject} ${nowSubject === item.subject_kr ? styles.nowSubject : null}`} onClick={() => setNowSubject(item.subject_kr)}>
+                    <div key={index} className={`${styles.undergraduate_content_subject} ${nowSubject === item.subject_kr ? styles.nowSubject : null}`} onClick={() => {setNowSubject(item.subject_kr); setNowPopup(true)}}>
                       <div>{item.subject_kr}</div>
                     </div>
                   ))}
@@ -220,20 +246,24 @@ export default function Education() {
               </div>
             </div>
 
-            <div>
-              <div className={styles.undergraduate_content_subject_kr}>{matchedData.subject_kr}</div>
-              <div className={styles.undergraduate_content_subject_en}>{matchedData.subject_en}</div>
-              <div className={styles.undergraduate_content_description_kr}>{matchedData.description_kr}</div>
-              <div className={styles.undergraduate_content_description_en}>{matchedData.description_en}</div>
-            </div>
+            {matchedData ? (
+              <div className={styles.undergraduate_non_popup_container}>
+              <div className={styles.undergraduate_content_subject_kr}>{matchedData?.subject_kr}</div>
+              <div className={styles.undergraduate_content_subject_en}>{matchedData?.subject_en}</div>
+              <div className={styles.undergraduate_content_description_kr}>{matchedData?.description_kr}</div>
+              <div className={styles.undergraduate_content_description_en}>{matchedData?.description_en}</div>
+            </div> ) : (
+              <div className={styles.undergraduate_non_popup_container}>설명 보려면 과목 선택해</div> )
+            }
 
           </div>
           
         </div> :
         <div>
-          여긴 대학원 과정 들어감
+          여긴 대학원 과정 들어감 🥕🥕
         </div>
       }
     </div>
+    </>
   )
 }
