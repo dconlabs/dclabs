@@ -39,7 +39,7 @@ export default function ResearchField() {
     },
     {
       title: "브랜드 아이덴티티 디자이너",
-      enTitle: "Brand Identity Designer",
+      enTitle: "BI Designer",
       desc: "브랜드의 성격과 핵심 가치를 시각적 언어로 정의합니다. 로고, 컬러, 타이포그래피 등 디자인 시스템을 구축해 고유한 정체성을 만듭니다.",
       enDesc: "Defines a brand’s core personality through visual language. They build systems including logos, colors, and typography to establish a unique identity."
     },
@@ -74,7 +74,7 @@ export default function ResearchField() {
       enDesc: "Teaches design theory and practice while developing curricula. They prepare students with industry-relevant skills based on current trends."
     },
     {
-      title: "시설직 디자인 공무원",
+      title: "디자인 공무원",
       enTitle: "Government Official for Design",
       desc: "공공디자인 정책을 기획하고 실행합니다. 도시 환경과 공공 시설 디자인을 개선하여 시민의 삶의 질을 향상시킵니다.",
       enDesc: "Plans and implements public design policies. They improve urban environments and public facilities to enhance citizens’ quality of life."

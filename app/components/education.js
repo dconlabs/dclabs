@@ -2,7 +2,7 @@
 
 import { createPortal } from 'react-dom';
 import styles from './education.module.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Close from './icons/close';
 
 export default function Education() {
@@ -133,6 +133,25 @@ export default function Education() {
   const matchedData = allSubjects.find(
     (subject) => subject.subject_kr === nowSubject
   );
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 450) {
+        setNowSubject('모바일 앱\n기획과 제작');
+      } else {
+        setNowSubject('');
+        setNowPopup(false);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>

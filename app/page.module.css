@@ -258,7 +258,7 @@
 
 .category_container {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   font-size: 20px;
   font-weight: 600;
   line-height: 30px;
@@ -430,26 +430,27 @@
     flex-direction: row;
     align-items: center;
     gap: 14px;
+    justify-content: space-between;
   }
 
   .research_title {
     font-size: 20px;
-    line-height: 38px;
+    line-height: 34px;
   }
 
   .research_title_hidden {
     font-size: 20px;
-    line-height: 38px;
+    line-height: 34px;
   }
 
   .research_title_en {
-    font-size: 20px;
+    font-size: 16px;
     margin: 0;
   }
 
   .research_title_en_hidden {
     color: #888;
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 0px;
   }
 
@@ -506,8 +507,8 @@
   }
 
   .news_card_img {
-    max-width: 150px;
-    max-height: 200px;
+    max-width: 120px;
+    max-height: 120px;
     object-fit: cover;
   }
 }
