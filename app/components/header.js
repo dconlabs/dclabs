@@ -125,8 +125,8 @@ export default function Header() {
         <div 
           className='mobile_hamburger_background' 
           onClick={() => setHamburgerOpen(false)} 
-          style={{backdropFilter: 'blur(2px)',
-            WebkitBackdropFilter: 'blur(2px)',}}
+          style={{backdropFilter: 'blur(4px)',
+            WebkitBackdropFilter: 'blur(4px)',}}
         />
       )}
         

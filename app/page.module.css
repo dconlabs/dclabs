@@ -430,7 +430,6 @@
     flex-direction: row;
     align-items: center;
     gap: 14px;
-    justify-content: space-between;
   }
 
   .research_title {
@@ -476,6 +475,8 @@
     line-height: 19px;
     margin-bottom: 30px;
     font-weight: 500;
+    gap: 20px;
+    justify-content: space-between;
   }
 
   .news_card_container {
