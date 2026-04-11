@@ -1,13 +1,13 @@
 .category_container {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   margin-bottom: 60px;
 }
 
 .category {
   width: fit-content;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 30px;
   cursor: pointer;
   transition: 0.4s;  

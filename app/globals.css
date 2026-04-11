@@ -113,10 +113,11 @@ html::-webkit-scrollbar {
 
 .header_nav .active {
   color: #fff;
+  font-weight: 600;
 }
 
 .header_nav div {
-  color: #888;
+  color: #555;
   transition: all 0.5s ease;
 }
 
@@ -170,7 +171,7 @@ html::-webkit-scrollbar {
     position: fixed;
     top: 0;
     right: 0;
-    width: 300px;
+    width: 280px;
     height: 100vh;
     background: #1c1c1c;
     border-left: 0.6px solid #888;
@@ -189,7 +190,6 @@ html::-webkit-scrollbar {
     flex-direction: column;
     gap: 40px;
     align-items: flex-end;
-    margin-top: -150px;
   }
 
   .close_btn {
@@ -205,13 +205,14 @@ html::-webkit-scrollbar {
 
   .mobile_header_item {
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 400;
     cursor: pointer;
     width: fit-content;
   }
 
   .mobile_header .active {
     color: #fff;
+    font-weight: 600;
   }
 
   .mobile_header_nav div {

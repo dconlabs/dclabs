@@ -31,7 +31,7 @@ export default async function Home() {
     <ScrollObserver/>
     
     <div className={styles.main_container}>
-      <div className="observe_wrapper">
+      <div className="observe_wrapper" style={{marginBottom:'10px'}}>
         <div className={`${styles.main_copy} observe_content`}>
           <div className={styles.main_copy_en}>
             Blending logic and<br/>emotion in <span>UX/UI and BX,</span><br/>we architect meaningful<br/>interactions brand<br/>identities to shape future<br/>digital experiences.
