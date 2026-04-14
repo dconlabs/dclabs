@@ -172,10 +172,10 @@ export default function Header() {
       </header>
 
       <div className={`mobile_header ${hamburgerOpen ? 'open' : ''}`}>
+        <div onClick={() => setHamburgerOpen(false)} className='close_btn hamburger_close_btn'>
+          <Close />
+        </div>
         <div className='mobile_header_nav'>
-          <div onClick={() => setHamburgerOpen(false)} className='close_btn'>
-            <Close />
-          </div>
           <div className='mobile_header_nav_items'>
             {NAV_ITEMS.map((item) => (
               <div 

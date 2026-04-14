@@ -197,6 +197,12 @@ html::-webkit-scrollbar {
     width: fit-content;
   }
 
+  .hamburger_close_btn {
+    position: fixed;
+    top: 46px;
+    right: 36px;
+  }
+
   .mobile_header_nav_items {
     display: flex;
     flex-direction: column;
