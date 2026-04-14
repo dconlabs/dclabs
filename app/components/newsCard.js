@@ -35,6 +35,20 @@ export default function NewsCard({ newsData, hasToken }) {
     pageNumbers.push(i);
   }
 
+  const scrollToNews = () => {
+    const element = document.getElementById('NEWS');
+    if (element) {
+      const headerHeight = 200;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className='research_mt'>
 
@@ -75,39 +89,43 @@ export default function NewsCard({ newsData, hasToken }) {
         </div>
       ))}
 
-      <div className={styles.pagination}>
+      <div className={currentPosts.length > 20 ? styles.pagination : styles.pagination_hidden}>
 
         {pageNumbers.map((num) => (
           <div key={num}
-            onClick={() => setPageNum(num)}
+            onClick={() => {setPageNum(num); scrollToNews();}}
             className={pageNum === num ? styles.active_page : styles.page}
           >
             {num}
           </div>
         ))}
 
-        <div onClick={() => {
-            if (pageGroup === 0) return;
+        {currentPosts.length > 20 && (
+          <div onClick={() => {
+              if (pageGroup === 0) return;
 
-            setPageGroup(pageGroup - 1);
-            setPageNum((pageGroup - 1) * PAGES_PER_GROUP + 1);
-          }}
-          className={pageGroup === 0 ? styles.page_arrow_disabled : styles.page_arrow}
-        >
-          <Arrow color={pageGroup === 0 ? '#888' : '#FFF'}/>
-        </div>
+              setPageGroup(pageGroup - 1);
+              setPageNum((pageGroup - 1) * PAGES_PER_GROUP + 1);
+            }}
+            className={pageGroup === 0 ? styles.page_arrow_disabled : styles.page_arrow}
+          >
+            <Arrow color={pageGroup === 0 ? '#888' : '#FFF'}/>
+          </div>
+        )}
 
-        <div onClick={() => {
-            if (endPage >= totalPage) return;
+        {currentPosts.length > 20 && (
+          <div onClick={() => {
+              if (endPage >= totalPage) return;
 
-            setPageGroup(pageGroup + 1);
-            setPageNum((pageGroup + 1) * PAGES_PER_GROUP + 1);
-          }}
-          className={endPage >= totalPage ? styles.page_arrow_disabled : styles.page_arrow}
-          style={{transform:'rotate(180deg)'}}
-        >
-          <Arrow color={endPage >= totalPage ? '#888' : '#FFF'}/>
-        </div>
+              setPageGroup(pageGroup + 1);
+              setPageNum((pageGroup + 1) * PAGES_PER_GROUP + 1);
+            }}
+            className={endPage >= totalPage ? styles.page_arrow_disabled : styles.page_arrow}
+            style={{transform:'rotate(180deg)'}}
+          >
+            <Arrow color={endPage >= totalPage ? '#888' : '#FFF'}/>
+          </div>
+        )}
 
       </div>
     </div>
