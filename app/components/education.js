@@ -279,7 +279,20 @@ export default function Education() {
           
         </div> :
         <div>
-          여긴 대학원 과정 들어감 🥕🥕
+
+          <div className={styles.undergraduate_title_container}>
+            <div className={styles.undergraduate_title_kr}>
+              AI 융합 디자인을 실험하는 Weird Lab과 인지적 경험 전략을 고찰하는 A2F Lab, 두 연구실의 고유한 전문성을 바탕으로 미래 디지털 환경의 본질을 깊이 있게 탐구해 나갑니다.
+            </div>
+            <div className={styles.undergraduate_title_en}>
+              Drawing on the unique expertise of Weird Lab in AI-converged design and A2F Lab in cognitive experience strategies, we deeply explore the essence of future digital environments.
+            </div>
+          </div>
+
+          <div className={styles.undergraduate_container_origin}>
+            개발중...
+          </div>
+
         </div>
       }
     </div>

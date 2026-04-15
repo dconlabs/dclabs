@@ -71,12 +71,13 @@
   transform: translateY(0);
 }
 
-.team_container {
+.lab_flex {
   display: flex;
   gap: 80px;
   margin-top: 60px;
-  width: fit-content;
-  max-width: 640px;
+  /* width: fit-content;
+  max-width: 640px; */
+  width: 100%;
 }
 
 .lab_container {
@@ -88,19 +89,34 @@
 .lab_img_container {
   display: flex;
   gap: 40px;
-  cursor: pointer;
 }
 
 .prof_img {
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   border: 1px solid #888;
 }
 
 .lab_img {
-  width: 440px;
-  height: 160px;
+  flex: 1;
+  height: 150px;
+  padding: 0 90px;
   border: 1px solid #888;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lab_img img {
+  width: 270px;
+}
+
+.lab_img div {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .lab_research {
@@ -113,7 +129,6 @@
   font-size: 30px;
   font-weight: 600;
   line-height: 40px;
-  text-transform: uppercase;
   text-wrap: nowrap;
 }
 
@@ -151,6 +166,10 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 32px;
+}
+
+.category_container2 {
+  display: none;
 }
 
 .research_mt {
@@ -493,6 +512,17 @@
     flex-wrap: wrap;
   }
 
+  .category_container2 {
+    font-size: 16px;
+    width: fit-content;
+    line-height: 19px;
+    font-weight: 500;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
   .news_card_container {
     padding: 20px 0;
     gap: 30px;
@@ -562,5 +592,55 @@
   .page_arrow_disabled {
     opacity: 0.5;
     padding: 10px;
+  }
+
+  .lab_container {
+    margin-top: 30px;
+    gap: 30px;
+  }
+
+  .prof_img {
+    display: none;
+  }
+
+  .lab_flex {
+    margin-top: 0px;
+  }
+
+  .lab_img {
+    width: 100%;
+    height: 110px;
+    padding: 0 20px;
+  }
+
+  .lab_img img {
+    width: 222px;
+  }
+
+  .lab_research {
+    gap: 10px;
+  }
+
+  .lab_research div {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    text-transform: capitalize;
+    }
+
+  .lab_description {
+    gap: 10px;
+  }
+
+  .lab_description_kr {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .lab_description_en {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
   }
 }
