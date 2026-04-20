@@ -125,22 +125,87 @@ export default function Education() {
       }
     ]
   };
+  const labDesc = {
+    weird: [
+      {
+        subject_kr: 'Human-AI\nCollaborative Design',
+        subject_en: 'Human-AI 협업 디자인',
+        description_kr: '인간과 인공지능이 협력하여 디자인 문제를 해결하는 방법을 학습하는 과목이다. 생성형 AI 및 다양한 AI 도구를 활용해 아이디어 발굴, 프로토타이핑, 의사결정 과정에서 인간의 창의성과 AI의 계산 능력을 결합하는 방식을 탐구한다. 실제 프로젝트를 통해 협업 워크플로우를 설계하고, 인간 중심 디자인 관점에서 AI 활용의 한계와 가능성을 분석한다.',
+        description_en: 'This course explores how humans and artificial intelligence collaboratively solve design problems. Students learn to integrate human creativity with AI-driven capabilities across ideation, prototyping, and decision-making processes using generative AI tools. Through practical projects, they design collaborative workflows and critically examine both the limitations and potentials of AI within a human-centered design framework.'
+      },
+      {
+        subject_kr: 'Generative\nAI-Enabled Design',
+        subject_en: '생성형 AI 기반 디자인',
+        description_kr: '생성형 AI 기술을 활용하여 새로운 디자인 결과물을 창출하는 방법을 다룬다. 텍스트, 이미지, 인터페이스 등 다양한 디자인 영역에서 AI를 활용한 자동 생성 및 변형 과정을 이해하고, 창의적 결과물로 발전시키는 전략을 학습한다. 프롬프트 설계와 결과 평가를 통해 AI 기반 디자인 프로세스를 체계적으로 익힌다.',
+        description_en: 'This course focuses on creating design outcomes using generative AI technologies. Students explore AI-driven generation and transformation processes across various domains such as text, images, and interfaces, and learn strategies to refine them into creative outputs. Through prompt design and evaluation, they develop a structured understanding of AI-enabled design workflows.'
+      },
+      {
+        subject_kr: 'UX/UI Design',
+        subject_en: 'UX/UI 디자인',
+        description_kr: '사용자 경험(UX)과 사용자 인터페이스(UI) 디자인의 핵심 원리를 학습하는 과목이다. 사용자 리서치, 정보 구조 설계, 인터랙션 디자인 등을 통해 직관적이고 효율적인 디지털 인터페이스를 설계하는 방법을 익힌다. 다양한 사례 분석과 실습을 통해 사용자 중심의 문제 해결 능력을 강화한다.',
+        description_en: 'This course covers the fundamental principles of user experience (UX) and user interface (UI) design. Students learn how to design intuitive and efficient digital interfaces through user research, information architecture, and interaction design. Through case studies and practical exercises, they strengthen their ability to solve problems from a user-centered perspective.'
+      },
+      {
+        subject_kr: 'Service Design',
+        subject_en: '서비스 디자인',
+        description_kr: '서비스 전반의 경험을 설계하는 방법을 학습하는 과목이다. 사용자 여정, 터치포인트, 이해관계자 분석을 기반으로 서비스 구조를 설계하고 개선하는 방법을 다룬다. 실제 문제를 바탕으로 서비스 시나리오를 구축하고, 지속 가능한 서비스 경험을 창출하는 전략을 탐구한다.',
+        description_en: 'This course focuses on designing holistic service experiences. Students learn to structure and improve services based on user journeys, touchpoints, and stakeholder analysis. Through real-world problem scenarios, they develop service concepts and explore strategies for creating sustainable and meaningful service experiences.'
+      }
+    ],
+
+    a2f: [
+      {
+        subject_kr: 'Cognitive Design',
+        subject_en: '인지 디자인',
+        description_kr: '인간의 인지 과정과 행동을 기반으로 효과적인 디자인을 설계하는 방법을 학습한다. 지각, 기억, 의사결정 등 인지 과학의 개념을 디자인에 적용하여 사용자 친화적인 인터페이스와 경험을 구현하는 것을 목표로 한다. 사용자 행동 분석을 통해 정보 전달의 효율성을 극대화하는 전략을 탐구한다.',
+        description_en: 'This course explores design approaches grounded in human cognition and behavior. Students apply concepts from cognitive science—such as perception, memory, and decision-making—to create user-friendly interfaces and experiences. It emphasizes optimizing information delivery through an understanding of user behavior.'
+      },
+      {
+        subject_kr: 'Design Thinking',
+        subject_en: '디자인 사고',
+        description_kr: '문제 해결 중심의 창의적 사고 방법론인 디자인 사고를 학습한다. 공감, 정의, 아이데이션, 프로토타이핑, 테스트의 과정을 통해 사용자 중심의 혁신적인 해결책을 도출하는 방법을 익힌다. 다양한 문제 상황에 적용 가능한 유연한 사고 방식을 기른다.',
+        description_en: 'This course introduces design thinking as a creative problem-solving methodology. Students learn to generate user-centered solutions through the stages of empathy, definition, ideation, prototyping, and testing. It cultivates a flexible mindset applicable to diverse problem contexts.'
+      },
+      {
+        subject_kr: 'Experience Strategy\nin Digital Contexts',
+        subject_en: '디지털 맥락에서의 경험 전략',
+        description_kr: '디지털 환경에서 사용자 경험을 전략적으로 설계하는 방법을 다룬다. 플랫폼, 콘텐츠, 인터페이스 전반에서 일관된 경험을 구축하기 위한 전략 수립과 실행 과정을 학습한다. 데이터 기반 인사이트와 사용자 행동 분석을 활용하여 효과적인 경험 설계를 목표로 한다.',
+        description_en: 'This course focuses on strategically designing user experiences within digital environments. Students learn how to develop and implement cohesive experience strategies across platforms, content, and interfaces. It emphasizes data-driven insights and user behavior analysis to create effective digital experiences.'
+      },
+      {
+        subject_kr: 'Human-AI\nCo-Thinking in Design',
+        subject_en: 'Human-AI 디자인 공동 사고',
+        description_kr: '디자인 과정에서 인간과 AI가 함께 사고하는 방식에 대해 탐구한다. AI를 단순한 도구가 아닌 사고 확장 파트너로 활용하여 문제 정의부터 해결까지의 전 과정을 재구성한다. 협업적 사고 구조를 설계하고, 인간과 AI 간의 역할 분담과 상호작용 방식을 실험적으로 검증한다.',
+        description_en: 'This course examines how humans and AI co-think within the design process. Rather than treating AI as a mere tool, students explore its role as a cognitive partner that extends thinking from problem definition to solution development. They design collaborative thinking frameworks and experimentally evaluate interaction models between humans and AI.'
+      }
+    ]
+  };
+
   let [nowSubject, setNowSubject] = useState('');
+  let [nowGraduate, setNowGraduate] = useState('');
   let [nowPopup, setNowPopup] = useState(false);
+  let [graduatePopup, setGraduatePopup] = useState(false);
 
   const allSubjects = Object.values(curriculum).flat();
+  const alllabDesc = Object.values(labDesc).flat();
 
   const matchedData = allSubjects.find(
     (subject) => subject.subject_kr === nowSubject
+  );
+  const matchedData2 = alllabDesc.find(
+    (subject) => subject.subject_kr === nowGraduate
   );
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 450) {
         setNowSubject('모바일 앱\n기획과 제작');
+        setNowGraduate('Human-AI\nCollaborative Design');
       } else {
         setNowSubject('');
+        setNowGraduate('');
         setNowPopup(false);
+        setGraduatePopup(false);
       }
     };
 
@@ -172,6 +237,27 @@ export default function Education() {
           <div className={styles.undergraduate_content_subject_en}>{matchedData?.subject_en}</div>
           <div className={styles.undergraduate_content_description_kr}>{matchedData?.description_kr}</div>
           <div className={styles.undergraduate_content_description_en}>{matchedData?.description_en}</div>
+        </div>
+      </div>, document.body
+    )}
+
+    {graduatePopup && createPortal(
+      <div 
+        className='mobile_hamburger_background' 
+        onClick={() => {setGraduatePopup(false); setNowGraduate('')}}
+        style={{backdropFilter: 'blur(4px)',
+          WebkitBackdropFilter: 'blur(4px)',}}
+      >
+        <div className={styles.undergraduate_popup_container} onClick={(e)=>e.stopPropagation()}>
+          <div className={styles.undergraduate_content_subject_kr}>
+            <div>{matchedData2?.subject_kr}</div>
+            <div style={{cursor: 'pointer'}} onClick={() => {setGraduatePopup(false); setNowGraduate('')}}>
+              <Close />
+            </div>
+          </div>
+          <div className={styles.undergraduate_content_subject_en}>{matchedData2?.subject_en}</div>
+          <div className={styles.undergraduate_content_description_kr}>{matchedData2?.description_kr}</div>
+          <div className={styles.undergraduate_content_description_en}>{matchedData2?.description_en}</div>
         </div>
       </div>, document.body
     )}
@@ -277,8 +363,11 @@ export default function Education() {
 
           </div>
           
-        </div> :
-        <div>
+        </div> : null
+      }
+      {
+        category === 'Graduate' ?
+                <div>
 
           <div className={styles.undergraduate_title_container}>
             <div className={styles.undergraduate_title_kr}>
@@ -290,10 +379,43 @@ export default function Education() {
           </div>
 
           <div className={styles.undergraduate_container_origin}>
-            개발중...
-          </div>
 
-        </div>
+            <div className={styles.undergraduate_container2}>
+              <div className={styles.undergraduate_content_container2}>
+                <div className={styles.undergraduate_content_year2}>Weird Lab</div>
+                <div className={styles.undergraduate_content_subject_container2}>
+                  {labDesc.weird.map((item, index) => (
+                    <div key={index} className={`${styles.undergraduate_content_subject2} ${nowGraduate === item.subject_kr ? styles.nowSubject : null}`} onClick={() => {setNowGraduate(item.subject_kr); setGraduatePopup(true)}}>
+                      <div>{item.subject_kr}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className={styles.undergraduate_content_container2}>
+                <div className={styles.undergraduate_content_year2}>A2F Lab</div>
+                <div className={styles.undergraduate_content_subject_container2}>
+                  {labDesc.a2f.map((item, index) => (
+                    <div key={index} className={`${styles.undergraduate_content_subject2} ${nowGraduate === item.subject_kr ? styles.nowSubject : null}`} onClick={() => {setNowGraduate(item.subject_kr); setGraduatePopup(true)}}>
+                      <div>{item.subject_kr}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {matchedData2 ? (
+              <div className={styles.undergraduate_non_popup_container}>
+              <div className={styles.undergraduate_content_subject_kr}>{matchedData2?.subject_kr}</div>
+              <div className={styles.undergraduate_content_subject_en}>{matchedData2?.subject_en}</div>
+              <div className={styles.undergraduate_content_description_kr}>{matchedData2?.description_kr}</div>
+              <div className={styles.undergraduate_content_description_en}>{matchedData2?.description_en}</div>
+            </div> ) : (
+              <div className={styles.undergraduate_non_popup_container}>설명 보려면 과목 선택해</div> )
+            }
+          </div>
+        </div> : null
       }
     </div>
     </>

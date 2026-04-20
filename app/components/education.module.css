@@ -53,13 +53,30 @@
   gap: 20px;
 }
 
+.undergraduate_container2 {
+  display: flex;
+  gap: 20px;
+}
+
 .undergraduate_content_container {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
+.undergraduate_content_container2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .undergraduate_content_subject_container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.undergraduate_content_subject_container2 {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -80,7 +97,26 @@
   white-space: pre-line;
 }
 
+.undergraduate_content_subject2 {
+  font-size: 20px;
+  font-weight: 500;
+  width: 430px;
+  height: 100px;
+  border: 0.6px solid #888;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
+  white-space: pre-line;
+  padding-left: 20px;
+}
+
 .undergraduate_content_year {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.undergraduate_content_year2 {
   font-size: 20px;
   font-weight: 400;
 }
@@ -183,6 +219,12 @@
     gap: 20px;
   }
 
+  .undergraduate_container2 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
   .undergraduate_content_container {
     gap: 10px;
   }
@@ -193,11 +235,25 @@
     gap: 20px;
   }
 
+  .undergraduate_content_subject_container2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .undergraduate_content_subject {
     font-size: 16px;
     width: 100%;
     height: 70px;
     overflow: hidden;
+  }
+
+  .undergraduate_content_subject2 {
+    font-size: 16px;
+    width: 100%;
+    height: 51px;
+    overflow: hidden;
+    white-space: normal;
   }
 
   .undergraduate_content_year {
