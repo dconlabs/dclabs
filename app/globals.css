@@ -129,6 +129,30 @@ html::-webkit-scrollbar {
   display: none;
 }
 
+@media screen and (max-width: 1500px) {
+
+  .header_container {
+    max-width: 1320px;
+    padding: 40px 60px;
+  }
+
+  .logo_size {
+    width: 74px;
+    height: 74px;
+  }
+
+  .header_nav {
+    gap: 120px;
+    font-size: 18px;
+  }
+
+  .footer_container {
+    max-width: 1320px;
+    padding: 40px 60px;
+  }
+
+}
+
 @media screen and (max-width: 450px) {
   html {
     overflow-x: hidden;

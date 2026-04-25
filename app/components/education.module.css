@@ -104,21 +104,38 @@
   height: 100px;
   border: 0.6px solid #888;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 27px;
   cursor: pointer;
   transition: 0.4s;
-  white-space: pre-line;
   padding-left: 20px;
 }
 
+.undergraduate_content_container3 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .undergraduate_content_year {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
 }
 
 .undergraduate_content_year2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.undergraduate_content_prof {
+  color: #888;
   font-size: 20px;
   font-weight: 400;
+}
+
+.fd_en {
+  color: #888;
 }
 
 .undergraduate_content_subject:hover {
@@ -127,9 +144,20 @@
   transition: 0.4s;
 }
 
+.undergraduate_content_subject2:hover {
+  color: #E4FC28;
+  border: 0.6px solid #E4FC28;
+  transition: 0.4s;
+}
+
 .nowSubject {
   background: #E4FC28;
   color: #000 !important;
+  transition: 0.4s;
+}
+
+.nowSubject > .fd_en {
+  color: #67720F !important;
   transition: 0.4s;
 }
 
@@ -171,7 +199,20 @@
   display: none;
 }
 
-@media (max-width: 450px) {
+@media screen and (max-width: 1500px) {
+
+  .curriculum_container {
+    margin-top: 50px;
+  }
+
+  .category_container {
+    margin-bottom: 50px;
+    gap: 40px;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
 
   .curriculum_container {
     margin-top: 30px;
