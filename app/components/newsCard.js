@@ -50,7 +50,7 @@ export default function NewsCard({ newsData, hasToken }) {
   };
 
   return (
-    <div className='research_mt'>
+    <div className={styles.research_mt}>
 
       <div className={styles.category_container}>
         {category.map((item, index) => (

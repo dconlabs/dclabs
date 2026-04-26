@@ -202,12 +202,80 @@
 @media screen and (max-width: 1500px) {
 
   .curriculum_container {
-    margin-top: 50px;
+    margin-top: 40px;
   }
 
   .category_container {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     gap: 40px;
+  }
+
+  .undergraduate_container_origin {
+    gap: 50px;
+  }
+
+  .undergraduate_title_container {
+    gap: 14px;
+    margin-bottom: 50px;
+    max-width: 760px;
+  }
+
+  .undergraduate_title_kr {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .undergraduate_title_en {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .undergraduate_content_year {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .undergraduate_content_subject {
+    font-size: 18px;
+    width: 110px;
+    height: 90px;
+  }
+
+  .undergraduate_content_subject_kr {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+
+  .undergraduate_content_subject_en {
+    font-size: 18px;
+    line-height: 26px; 
+    margin-bottom: 30px;
+  }
+
+  .undergraduate_content_description_kr {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 14px;
+  }
+
+  .undergraduate_content_description_en {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .undergraduate_content_year2 {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .undergraduate_content_prof {
+    font-size: 18px;
+  }
+
+  .undergraduate_content_subject2 {
+    font-size: 18px;
+    width: 370px;
+    line-height: 25px;
   }
 
 }

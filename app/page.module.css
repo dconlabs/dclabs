@@ -239,6 +239,7 @@
 .accordion_inner {
   overflow: hidden;
   max-width: 1100px;
+  word-break: keep-all;
 }
 
 .research_desc {
@@ -351,6 +352,7 @@
 .news_card_img {
   max-width: 460px;
   object-fit: cover;
+  border: 1px solid #555;
 }
 
 .pagination {
@@ -406,6 +408,11 @@
   align-items: center;
 }
 
+.link_icon {
+  width: 60px;
+  height: 60px;
+}
+
 @media screen and (max-width: 1500px) {
 
   .main_container {
@@ -416,7 +423,7 @@
   }
 
   .main_copy {
-    gap: 50px;
+    gap: 40px;
   }
 
   .main_copy_en {
@@ -436,6 +443,170 @@
 
   .sub_title {
     font-size: 54px;
+  }
+
+  .lab_flex {
+    gap: 60px;
+    margin-top: 40px;
+  }
+
+  .lab_container {
+    gap: 40px;
+  }
+
+  .lab_img_container {
+    gap: 20px;
+  }
+
+  .prof_img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .lab_img {
+    flex: 1;
+    height: 130px;
+    padding: 0 20px;
+  }
+
+  .lab_img img {
+    width: 230px;
+  }
+
+  .link_icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .lab_research {
+    gap: 14px;
+  }
+
+  .lab_research div {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .lab_description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .lab_description_kr {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .lab_description_en {
+    font-size: 18px;
+  }
+
+  .research_mt {
+    margin-top: 40px;
+  }
+
+  .research_container {
+    padding: 30px 0;
+  }
+
+  .research_title {
+    font-size: 28px;
+    line-height: 45px;
+  }
+
+  .research_title_hidden {
+    font-size: 28px;
+  }
+
+  .research_title_en {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .research_title_en_hidden {
+    font-size: 18px;
+  }
+
+  .accordion_inner {
+    max-width: 900px;
+    word-break: keep-all;
+  }
+
+  .research_desc {
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 20px;
+  }
+
+  .research_desc_en {
+    font-size: 18px;
+  }
+
+  .category_container {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 40px;
+  }
+
+  .news_card_container {
+    padding: 30px 0;
+    gap: 50px;
+  }
+
+  .news_card_content {
+    gap: 40px;
+  }
+
+  .news_card_text {
+    gap: 10px;
+    width: 760px;
+  }
+
+  .news_card_title {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .news_card_enTitle {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 10px;
+  }
+
+  .news_card_contents {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .news_card_date {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .news_card_img {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .pagination {
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .pagination_hidden {
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .page {
+    font-size: 18px;
+    padding: 4.5px 10.5px;
+  }
+
+  .active_page {
+    font-size: 18px;
+    padding: 4.5px 10.5px;
   }
 
 }

@@ -67,17 +67,14 @@ export default async function Home() {
       <div id="NEWS" className="observe_wrapper">
         <div className="observe_content">
           <div className={styles.sub_title}>News</div>
-          <div style={{margin:'40px 0'}}>
-            {
-              hasToken ? <Link href="/news/post" className={styles.post_btn}>뉴스 등록하기</Link> : null
-            }
-          </div>
+          {
+            hasToken ? <div style={{marginTop:'40px'}}><Link href="/news/post" className={styles.post_btn}>뉴스 등록하기</Link></div> : null
+          }
           <div>
             <NewsCard newsData={serializedData} hasToken={hasToken}/>
           </div>
         </div>
       </div>
-      
 
     </div>
     </>

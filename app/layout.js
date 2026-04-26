@@ -14,7 +14,7 @@ export default async function RootLayout({ children }) {
   const token = cookieStore.get('admin_token')?.value;
 
   return (
-    <html lang="ko">
+    <html lang="en">
       <head>
         <link 
           rel="stylesheet" 
