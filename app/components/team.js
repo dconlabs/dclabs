@@ -28,8 +28,8 @@ export default function Team() {
       name: 'Weird Lab',
       logo: '/WEIRD_white.png',
       research: [
-        'Human–AI Collaborative Design',
-        'Generative AI–Enabled Design',
+        'Human–AIn\nCollaborative Design',
+        'Generative\nAI–Enabled Design',
         'UX / UI Design',
         'Service Design'
       ],
@@ -44,8 +44,8 @@ export default function Team() {
       research: [
         'Cognitive Design Activity',
         'Design Thinking',
-        'Experience Strategy in Digital Contexts',
-        'Human–AI Co-thinking in Design'
+        'Experience Strategy\nin Digital Contexts',
+        'Human–AI\nCo-thinking in Design'
       ],
       descriptionKr:
         'A2F 디자인랩은 디자인을 단순한 기술이 아닌 인지적 사고 과정으로 정의하며, 디지털 환경에서의 심층적인 UX/BX 경험 전략을 탐구합니다. 또한 생성형 AI를 디자이너를 위한 공동 사고 도구로 활용하여, 인간과 AI가 협력하는 혁신적인 디자인 모델을 연구합니다.',

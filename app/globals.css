@@ -59,7 +59,7 @@ html::-webkit-scrollbar {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 40px 0;
+  padding: 30px 0;
   align-items: center;
 }
 
@@ -133,7 +133,7 @@ html::-webkit-scrollbar {
 
   .header_container {
     max-width: 1320px;
-    padding: 40px 60px;
+    padding: 30px 60px;
   }
 
   .logo_size {
@@ -149,6 +149,35 @@ html::-webkit-scrollbar {
   .footer_container {
     max-width: 1320px;
     padding: 40px 60px;
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+  .header_container {
+    max-width: 1020px;
+    padding: 30px 60px;
+  }
+
+  .logo_size {
+    width: 70px;
+    height: 70px;
+  }
+
+  .header_nav {
+    gap: 70px;
+    font-size: 16px;
+  }
+
+  .footer_container {
+    max-width: 1020px;
+    padding: 40px 60px;
+    gap: 60px;
+  }
+
+  .footer-contact, .footer-copyright {
+    font-size: 14px;
   }
 
 }

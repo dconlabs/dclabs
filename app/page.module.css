@@ -309,13 +309,13 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 40px;
+  max-width: 880px;
 }
 
 .news_card_text {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 880px;
 }
 
 .news_card_title {
@@ -556,15 +556,15 @@
 
   .news_card_content {
     gap: 40px;
+    max-width: 760px;
   }
 
   .news_card_text {
     gap: 10px;
-    width: 760px;
   }
 
   .news_card_title {
-    font-size: 22px;
+    font-size: 28px;
     line-height: 32px;
   }
 
@@ -609,6 +609,196 @@
     padding: 4.5px 10.5px;
   }
 
+}
+
+@media screen and (max-width: 1200px) {
+
+  .main_container {
+    gap: 130px;
+    padding: 0 60px;
+    max-width: 1020px;
+    margin: 90px auto 130px auto;
+  }
+
+  .main_copy_en {
+    font-size: 56px;
+    line-height: 60px;
+  }
+
+  .main_copy_en span {
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .main_copy_kr {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .sub_title {
+    font-size: 48px;
+  }
+
+  .lab_flex {
+    gap: 50px;
+  }
+
+  .lab_container {
+    gap: 40px;
+  }
+
+  .prof_img {
+    display: none;
+  }
+
+  .lab_img {
+    flex: 1;
+    height: 130px;
+    padding: 0 20px;
+  }
+
+  .lab_img img {
+    width: 190px;
+  }
+
+  .link_icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .lab_research {
+    gap: 14px;
+  }
+
+  .lab_research div {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .lab_description {
+    gap: 10px;
+  }
+
+  .lab_description_kr {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .lab_description_en {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .research_mt {
+    margin-top: 40px;
+  }
+
+  .research_container {
+    padding: 20px 0;
+  }
+
+  .research_title {
+    font-size: 22px;
+    line-height: 40px;
+  }
+
+  .research_title_hidden {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .research_title_en {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .research_title_en_hidden {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .accordion_inner {
+    max-width: 770px;
+    word-break: keep-all;
+  }
+
+  .research_desc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .research_desc_en {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .category_container {
+    font-size: 16px;
+    line-height: 24px;
+    gap: 30px;
+  }
+
+  .news_card_container {
+    padding: 20px 0;
+  }
+
+  .news_card_content {
+    gap: 40px;
+    max-width: 540px;
+  }
+
+  .news_card_text {
+    gap: 10px;
+  }
+
+  .news_card_title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .news_card_enTitle {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .news_card_contents {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .news_card_date {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .page {
+    font-size: 16px;
+    padding: 5.5px 11px;
+  }
+
+  .active_page {
+    font-size: 16px;
+    padding: 5.5px 11px;
+  }
+
+}
+
+@media screen and (max-width: 950px) {
+
+  .lab_research div {
+    white-space: pre-line;
+  }
+
+  .news_card_img {
+    display: none;
+  }
+
+  .news_card_content {
+    max-width: 700px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  
 }
 
 @media screen and (max-width: 450px) {
