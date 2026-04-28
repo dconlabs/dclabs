@@ -367,10 +367,11 @@
 
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   .detail_container {
     padding: 0 24px;
     margin: 142px auto 200px auto;
+    max-width: 600px;
   }
 
   .content_container {

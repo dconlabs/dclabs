@@ -801,11 +801,12 @@
   
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   .main_container {
     padding: 0 24px;
     gap: 100px;
     margin: 150px auto 100px auto;
+    max-width: 600px;
   }
 
   .main_copy {
@@ -894,8 +895,7 @@
     line-height: 19px;
     margin-bottom: 30px;
     font-weight: 500;
-    gap: 20px;
-    justify-content: space-between;
+    gap: 30px;
     flex-wrap: wrap;
   }
 
@@ -935,7 +935,7 @@
 
   .news_card_date {
     font-size: 16px;
-    margin-top: 40px;
+    margin-top: 0px;
   }
 
   .news_card_img {
@@ -1014,6 +1014,7 @@
     line-height: 26px;
     letter-spacing: -0.5px;
     text-transform: capitalize;
+    white-space: nowrap;
     }
 
   .lab_description {

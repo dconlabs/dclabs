@@ -182,7 +182,7 @@ html::-webkit-scrollbar {
 
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   html {
     overflow-x: hidden;
     font-family: "Pretendard", sans-serif;
@@ -207,7 +207,7 @@ html::-webkit-scrollbar {
 
   .header_container {
     padding: 24px;
-    max-width: 450px;
+    max-width: 600px;
   }
 
   .header_nav_mobile {
@@ -253,7 +253,7 @@ html::-webkit-scrollbar {
   .hamburger_close_btn {
     position: fixed;
     top: 46px;
-    right: 36px;
+    right: 24px;
   }
 
   .mobile_header_nav_items {
@@ -283,7 +283,8 @@ html::-webkit-scrollbar {
     flex-direction: column;
     padding: 30px 24px;
     margin: 0 auto;
-    width: 100%;
+    max-width: 600px;
+    gap: 10px;
   }
 
   .footer-contact {

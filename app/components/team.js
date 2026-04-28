@@ -9,7 +9,7 @@ function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth <= 450)
+    const check = () => setIsMobile(window.innerWidth <= 768)
     check()
     window.addEventListener('resize', check)
     return () => window.removeEventListener('resize', check)
@@ -28,7 +28,7 @@ export default function Team() {
       name: 'Weird Lab',
       logo: '/WEIRD_white.png',
       research: [
-        'Human–AIn\nCollaborative Design',
+        'Human–AI\nCollaborative Design',
         'Generative\nAI–Enabled Design',
         'UX / UI Design',
         'Service Design'

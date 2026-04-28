@@ -397,11 +397,11 @@
   }
 
   .undergraduate_content_subject {
-    min-width: 135px;
+    width: 135px;
   }
 
   .undergraduate_content_subject2 {
-    min-width: 310px;
+    width: 310px;
   }
 
   .undergraduate_non_popup_container {
@@ -410,7 +410,7 @@
 
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
 
   .curriculum_container {
     margin-top: 30px;
@@ -471,6 +471,7 @@
   .undergraduate_content_subject_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    width: 100%;
     gap: 20px;
   }
 
@@ -485,18 +486,20 @@
     width: 100%;
     height: 70px;
     overflow: hidden;
+    letter-spacing: -0.48px;
   }
 
   .undergraduate_content_subject2 {
     font-size: 16px;
     width: 100%;
-    height: 51px;
+    height: 80px;
     overflow: hidden;
     white-space: normal;
   }
 
   .undergraduate_content_year {
     font-size: 16px;
+    width: 27px;
   }
 
   .undergraduate_popup_container {
@@ -508,7 +511,7 @@
     transform: translate(-50%, -50%);
     border: 0.6px solid #888;
     background: #1C1C1C;
-    width: calc(100% - 48px);
+    width: calc(100% - 160px);
     padding: 20px;
     z-index: 100;
   }
@@ -537,4 +540,12 @@
     line-height: 22px;
   }
 
+}
+
+@media screen and (max-width: 450px) {
+  
+  .undergraduate_popup_container {
+    width: calc(100% - 48px);
+  }
+  
 }

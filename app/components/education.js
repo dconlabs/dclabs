@@ -201,7 +201,7 @@ export default function Education() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 450) {
+      if (window.innerWidth > 768) {
         setNowSubject('모바일 앱\n기획과 제작');
         setNowGraduate('Human-AI\nCollaborative Design');
       } else {
