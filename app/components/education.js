@@ -226,9 +226,7 @@ export default function Education() {
     {nowPopup && createPortal(
       <div 
         className='mobile_hamburger_background' 
-        onClick={() => {setNowPopup(false); setNowSubject('')}} 
-        style={{backdropFilter: 'blur(4px)',
-          WebkitBackdropFilter: 'blur(4px)',}}
+        onClick={() => {setNowPopup(false); setNowSubject('')}}
       >
         <div className={styles.undergraduate_popup_container} onClick={(e)=>e.stopPropagation()}>
           <div className={styles.undergraduate_content_subject_kr}>
@@ -248,8 +246,6 @@ export default function Education() {
       <div 
         className='mobile_hamburger_background' 
         onClick={() => {setGraduatePopup(false); setNowGraduate('')}}
-        style={{backdropFilter: 'blur(4px)',
-          WebkitBackdropFilter: 'blur(4px)',}}
       >
         <div className={styles.undergraduate_popup_container} onClick={(e)=>e.stopPropagation()}>
           <div className={styles.undergraduate_content_subject_kr}>

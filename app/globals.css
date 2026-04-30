@@ -308,7 +308,7 @@ html::-webkit-scrollbar {
   }
 
   .mobile_hamburger_background {
-    background: rgba(28, 28, 28, 0.5);
+    background: rgba(0, 0, 0, 0.9);
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -316,5 +316,39 @@ html::-webkit-scrollbar {
     left: 0;
     z-index: 99;
     transform: translateZ(0);
+  }
+}
+
+@media screen and (max-width: 389px) {
+
+  .logo_size {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header_container {
+    padding: 20px;
+    max-width: 360px;
+  }
+
+  .hamburger_close_btn {
+    top: 38px;
+    right: 20px;
+  }
+
+  .footer_container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 360px;
+    gap: 6px;
+  }
+
+  .footer-contact {
+    font-size: 12px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+    margin-top: 6px;
   }
 }

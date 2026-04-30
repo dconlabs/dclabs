@@ -223,6 +223,15 @@
   padding: 10px 16px;
 }
 
+.topbtn_wrapper {
+  display: none;
+}
+
+.back_icon {
+  width: 40px;
+  height: 40px;
+}
+
 @media screen and (max-width: 1500px) {
   .detail_container {
     padding: 0 60px;
@@ -354,15 +363,15 @@
 
 @media screen and (max-width: 950px) {
   .img_container_view {
-    max-width: 240px;
+    max-width: 280px;
   }
 
   .img_container img {
-    max-width: 240px;
+    max-width: 280px;
   }
 
   .drop_field {
-    width: 240px;
+    width: 280px;
   }
 
 }
@@ -462,6 +471,10 @@
     font-size: 16px; 
   }
 
+  .nav_container {
+    margin-top: 60px;
+  }
+
   .nav_text {
     font-size: 16px;
     flex-shrink: 0;  
@@ -475,4 +488,96 @@
     min-width: 0;
     flex: 1;
   }
+
+  .topbtn_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 100px;
+  }
+
+  .topbtn_container {
+    display: flex;
+    align-items: flex-end;
+    width: fit-content;
+    padding: 11px 12px 7px;
+    border: 1px solid #E4FC28;
+    cursor: pointer;
+  }
+  
+  .back_icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media screen and (max-width: 389px) {
+  
+  .detail_container {
+    padding: 0 20px;
+    margin: 134px auto 100px auto;
+    max-width: 360px;
+  }
+
+  .title_container {
+    gap: 6px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .enTitle {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .date_container {
+    font-size: 14px;
+    margin-top: 0px;
+    gap: 10px;
+  }
+
+  .content {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .mobile_img_container {
+    gap: 14px;
+    margin-top: 40px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    scroll-padding-left: 20px;
+  }
+
+  .mobile_img_multi {
+    flex: 0 0 calc(100% - 10px); 
+  }
+
+  .category_item {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .category_item_active {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .submit_btn {
+    padding: 14px; 
+    font-size: 14px; 
+  }
+
+  .nav_text {
+    font-size: 14px;
+  }
+
+  .nav_title {
+    font-size: 14px;
+  }
+
 }

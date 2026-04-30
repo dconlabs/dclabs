@@ -122,11 +122,9 @@ export default function Header() {
   return (
     <>
       {hamburgerOpen && (
-        <div 
+        <div
           className='mobile_hamburger_background' 
           onClick={() => setHamburgerOpen(false)} 
-          style={{backdropFilter: 'blur(4px)',
-            WebkitBackdropFilter: 'blur(4px)',}}
         />
       )}
         

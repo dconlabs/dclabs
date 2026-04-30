@@ -6,6 +6,7 @@ import { cookies } from "next/headers";
 import Header from "@/app/components/header";
 import Back from "@/app/components/icons/back";
 import styles from "./detail.module.css";
+import TopBtn from "@/app/components/icons/topBtn";
 
 export default async function NewsDetail({ params }) {
 
@@ -42,7 +43,8 @@ export default async function NewsDetail({ params }) {
 
       <div className={styles.detail_container}>
 
-        <Link href="/"><Back/></Link>
+        <Link href="/#NEWS"><Back/></Link>
+        
 
         {
           post.source == "dclabs" && token ? 
@@ -88,6 +90,12 @@ export default async function NewsDetail({ params }) {
                 <img key={idx} src={imgUrl}/>
               ))
             )}
+          </div>
+        </div>
+        
+        <div className={styles.topbtn_wrapper}>
+          <div className={styles.topbtn_container}>
+            <TopBtn/>
           </div>
         </div>
 
