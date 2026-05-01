@@ -1,6 +1,5 @@
 import "./globals.css";
-import { cookies } from 'next/headers'
-import Header from "./components/header";
+// import { cookies } from 'next/headers'
 import Footer from "./components/footer";
 
 export const metadata = {
@@ -10,17 +9,11 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 
-  const cookieStore = await cookies();
-  const token = cookieStore.get('admin_token')?.value;
+  // const cookieStore = await cookies();
+  // const token = cookieStore.get('admin_token')?.value;
 
   return (
-    <html lang="en">
-      <head>
-        <link 
-          rel="stylesheet" 
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
-        />
-      </head>
+    <html>
       <body className="layout">
         <main className="content">
           {children}
