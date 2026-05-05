@@ -185,6 +185,21 @@ html::-webkit-scrollbar {
 
 }
 
+@media screen and (max-width: 950px) {
+
+  .mobile_hamburger_background {
+    background: rgba(0, 0, 0, 0.9);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transform: translateZ(0);
+  }
+  
+}
+
 @media screen and (max-width: 768px) {
   html {
     overflow-x: hidden;
@@ -310,7 +325,7 @@ html::-webkit-scrollbar {
     margin-top: 10px;
   }
 
-  .mobile_hamburger_background {
+  /* .mobile_hamburger_background {
     background: rgba(0, 0, 0, 0.9);
     width: 100vw;
     height: 100vh;
@@ -319,7 +334,7 @@ html::-webkit-scrollbar {
     left: 0;
     z-index: 99;
     transform: translateZ(0);
-  }
+  } */
 }
 
 @media screen and (max-width: 389px) {

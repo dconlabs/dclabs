@@ -12,7 +12,7 @@ export default function Education() {
   const curriculum = {
     sophomore_1: [
       {
-        subject_kr: '모바일 앱\n기획과 제작',
+        subject_kr: '모바일앱\n기획과 제작',
         subject_en: 'Mobile App Planning and Production',
         description_kr: '모바일 매체를 이해하고 인터랙티브 멀티미디어 콘텐츠 기획 및 제작 역량을 기릅니다. 기획부터 구현까지 앱 생태계 전 과정을 실습하여, 실무 중심의 창의적 인터페이스 디자인과 구현 능력을 배양합니다.',
         description_en: 'Explore mobile media and interactive content creation. Students master the full app planning and UI design process.'
@@ -52,7 +52,7 @@ export default function Education() {
     ],
     junior_1: [
       {
-        subject_kr: '사용자\n경험과 AI',
+        subject_kr: '사용자경험과\nAI',
         subject_en: 'User Experience and AI',
         description_kr: 'AI가 사용자 경험 디자인에 미치는 영향을 탐구하고 생성형 AI의 실무 활용법을 배웁니다. 디자이너 관점에서 AI 도구로 아이디어를 시각화하며, 맞춤형 경험 설계와 효율적인 워크플로우 구축 역량을 탄탄히 다집니다.',
         description_en: 'Explore AI\'s impact on UX design and use generative AI tools. Visualize ideas to build highly efficient workflows.'
@@ -84,7 +84,7 @@ export default function Education() {
         description_en: 'Focus on customer-centered service design. Use journey maps to define problems and develop highly valuable solutions.'
       },
       {
-        subject_kr: '디자인\n가이드',
+        subject_kr: 'UI 디자인\n가이드',
         subject_en: 'UI Design Guide',
         description_kr: '디바이스 환경에 최적화된 UI 구축 가이드라인과 시스템 설계를 학습합니다. 타이포그래피와 컴포넌트 구조로 시각적 일관성 및 사용성을 높이며, 실질적인 디자인 시스템 구축 실습을 통해 실무 협업 역량을 탄탄히 강화합니다.',
         description_en: 'Learn UI guidelines and system design for various devices. Build design systems to improve consistency and usability.'
@@ -201,8 +201,8 @@ export default function Education() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setNowSubject('모바일 앱\n기획과 제작');
+      if (window.innerWidth > 950) {
+        setNowSubject('모바일앱\n기획과 제작');
         setNowGraduate('Human-AI\nCollaborative Design');
       } else {
         setNowSubject('');

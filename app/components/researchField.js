@@ -14,7 +14,7 @@ export default function ResearchField() {
       enDesc: "Oversees the entire product lifecycle from concept to launch. They balance business goals with user needs, driving functional problem-solving and overall direction beyond mere visual aesthetics."
     },
     {
-      title: "사용자 경험 디자이너",
+      title: "사용자경험 디자이너",
       enTitle: "UX Designer",
       desc: "사용자가 제품이나 서비스를 이용하며 느끼는 총체적인 경험을 설계합니다. 리서치와 데이터를 바탕으로 불편함을 찾아내고, 더 쉽고 만족스럽게 목적을 달성할 수 있도록 논리적인 흐름을 만듭니다.",
       enDesc: "Designs the overall experience a user has with a product. By leveraging research and data, they identify pain points and create logical, intuitive user flows to ensure user satisfaction and ease of use."
@@ -26,7 +26,7 @@ export default function ResearchField() {
       enDesc: "Designs interactions between users and digital products or services. They structure flows, behaviors, and feedback systems to help users achieve their goals intuitively and efficiently."
     },
     {
-      title: "브랜드 경험 디자이너",
+      title: "브랜드경험 디자이너",
       enTitle: "BX Designer",
       desc: "고객이 브랜드와 만나는 온·오프라인의 모든 접점에서 일관된 메시지와 감정을 느끼도록 설계합니다. 브랜드의 철학이 실제 경험으로 이어지도록 여정을 기획합니다.",
       enDesc: "Shapes how customers perceive a brand across all online and offline touchpoints. They design cohesive journeys that translate a brand's philosophy into real-world experiences."

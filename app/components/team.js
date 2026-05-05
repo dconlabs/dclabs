@@ -20,12 +20,12 @@ function useIsMobile() {
 
 export default function Team() {
 
-  const [nowCategory, setNowCategory] = useState('Weird Lab')
+  const [nowCategory, setNowCategory] = useState('WEIRD Lab')
   const isMobile = useIsMobile()
 
   const labs = [
     {
-      name: 'Weird Lab',
+      name: 'WEIRD Lab',
       logo: '/WEIRD_white.png',
       research: [
         'Human–AI\nCollaborative Design',
@@ -34,7 +34,7 @@ export default function Team() {
         'Service Design'
       ],
       descriptionKr:
-        'Weird 디자인랩은 디자인을 단순한 기술이 아닌 인지적 사고 과정으로 정의하며, 디지털 환경에서의 심층적인 UX/BX 경험 전략을 탐구합니다. 또한 생성형 AI를 디자이너를 위한 공동 사고 도구로 활용하여, AI와 협력하는 혁신적인 디자인 모델을 연구합니다.',
+        'WEIRD 디자인랩은 디자인을 단순한 기술이 아닌 인지적 사고 과정으로 정의하며, 디지털 환경에서의 심층적인 UX/BX 경험 전략을 탐구합니다. 또한 생성형 AI를 디자이너를 위한 공동 사고 도구로 활용하여, AI와 협력하는 혁신적인 디자인 모델을 연구합니다.',
       descriptionEn:
         'We cultivate creative global experts who lead new media trends through multimedia convergence.Our curriculum and practice.'
     },

@@ -359,6 +359,22 @@
     font-size: 16px;
   }
 
+    .topbtn_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 100px;
+  }
+
+  .topbtn_container {
+    display: flex;
+    align-items: flex-end;
+    width: fit-content;
+    padding: 11px 12px 7px;
+    border: 1px solid #E4FC28;
+    cursor: pointer;
+  }
+
 }
 
 @media screen and (max-width: 950px) {
@@ -487,22 +503,6 @@
     white-space: nowrap;
     min-width: 0;
     flex: 1;
-  }
-
-  .topbtn_wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 100px;
-  }
-
-  .topbtn_container {
-    display: flex;
-    align-items: flex-end;
-    width: fit-content;
-    padding: 11px 12px 7px;
-    border: 1px solid #E4FC28;
-    cursor: pointer;
   }
   
   .back_icon {
