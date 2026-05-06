@@ -7,6 +7,7 @@ import Header from "@/app/components/header";
 import Back from "@/app/components/icons/back";
 import styles from "./detail.module.css";
 import TopBtn from "@/app/components/icons/topBtn";
+import HorizontalScroll from "@/app/components/horizontalScroll";
 
 export default async function NewsDetail({ params }) {
 
@@ -64,23 +65,25 @@ export default async function NewsDetail({ params }) {
               <div>|</div>
               <div>{post.uploader}</div>
             </div>
-            <div className={styles.mobile_img_container}>
+            
+            <HorizontalScroll className={styles.mobile_img_container}>
               {post.images && post.images.length == 1 ? (
                 post.images.map((imgUrl, idx) => (
                   <div key={idx} className={styles.mobile_img_single}>
-                    <img src={imgUrl}/>
+                    <img draggable={false} src={imgUrl}/>
                   </div>
                 ))
               ) : (
                 post.images && post.images.length > 0 && (
                   post.images.map((imgUrl, idx) => (
                     <div key={idx} className={styles.mobile_img_multi}>
-                      <img src={imgUrl}/>
+                      <img draggable={false} src={imgUrl}/>
                     </div>
                   ))
                 )
               )}
-            </div>
+            </HorizontalScroll>
+            
             <div className={styles.content}>{post.contents}</div>
           </div>
 
