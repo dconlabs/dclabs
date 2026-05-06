@@ -14,9 +14,9 @@ export default function ScrollToTopBtn() {
     <div
       onClick={handleClick}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
-        <path d="M4.29068e-07 8.18407L1.52496 9.76648L6.89864 4.27747L6.89864 18L9.12557 18L9.12557 4.27747L14.475 9.76648L16 8.18407L8.0121 -3.49162e-07L4.29068e-07 8.18407Z" fill="#E4FC28"/>
-      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 15 10" fill="none">
+  <path d="M0.376953 8.75781L7.37695 0.757812L14.377 8.75781" stroke="#E4FC28"/>
+</svg>
     </div>
   );
 }

@@ -359,7 +359,7 @@
     font-size: 16px;
   }
 
-    .topbtn_wrapper {
+  .topbtn_wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -370,7 +370,7 @@
     display: flex;
     align-items: flex-end;
     width: fit-content;
-    padding: 11px 12px 7px;
+    padding: 8.5px 10px;
     border: 1px solid #E4FC28;
     cursor: pointer;
   }

@@ -56,7 +56,7 @@
 
 .undergraduate_container2 {
   display: flex;
-  gap: 20px;
+  gap: 40px;
 }
 
 .undergraduate_content_container {
@@ -101,7 +101,7 @@
 .undergraduate_content_subject2 {
   font-size: 20px;
   font-weight: 500;
-  width: 430px;
+  width: 420px;
   height: 100px;
   border: 0.6px solid #888;
   display: flex;
@@ -205,8 +205,6 @@
   display: none;
 }
 
-
-
 @media screen and (max-width: 1500px) {
 
   .curriculum_container {
@@ -223,6 +221,10 @@
     gap: 40px;
   }
 
+  .undergraduate_container2 {
+    gap: 30px;
+  }
+
   .undergraduate_container_origin {
     gap: 50px;
   }
@@ -230,7 +232,7 @@
   .undergraduate_title_container {
     gap: 14px;
     margin-bottom: 50px;
-    max-width: 760px;
+    max-width: 790px;
   }
 
   .undergraduate_title_kr {
@@ -287,7 +289,7 @@
 
   .undergraduate_content_subject2 {
     font-size: 18px;
-    width: 370px;
+    width: 380px;
     line-height: 25px;
   }
 
@@ -331,13 +333,14 @@
 
   .undergraduate_content_container {
     flex-direction: row;
-    gap: 9px;
+    gap: 10px;
   }
 
   .undergraduate_content_year {
     font-size: 16px;
     white-space: nowrap;
     width: 27px;
+    min-width: 27px;
   }
 
   .undergraduate_content_subject_container {
@@ -381,7 +384,7 @@
 
   .undergraduate_content_subject2 {
     font-size: 17px;
-    width: 260px;
+    width: 255px;
     line-height: 24px;
     white-space: pre-line;
   }
@@ -401,7 +404,16 @@
   }
   
   .undergraduate_title_container {
-    max-width: 640px;
+    max-width: 830px;
+  }
+
+  .undergraduate_container2 {
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  .undergraduate_content_container2 {
+    flex: 1;
   }
 
   .undergraduate_content_subject {
@@ -409,7 +421,8 @@
   }
 
   .undergraduate_content_subject2 {
-    width: 310px;
+    /* width: 305px; */
+    width: 100%;
   }
 
   /* .undergraduate_non_popup_container {
@@ -557,10 +570,10 @@
     white-space: normal;
   }
 
-  .undergraduate_content_year {
+  /* .undergraduate_content_year {
     font-size: 16px;
     width: 27px;
-  }
+  } */
 
   /* .undergraduate_popup_container {
     display: flex;
