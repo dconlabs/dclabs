@@ -462,6 +462,9 @@
 
   .mobile_img_multi img {
     width: 100%;
+    /* height: 300px; */
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
     display: block;
     pointer-events: none;
     user-select: none;
