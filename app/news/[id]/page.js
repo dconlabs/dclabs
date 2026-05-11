@@ -96,11 +96,7 @@ export default async function NewsDetail({ params }) {
           </div>
         </div>
         
-        <div className={styles.topbtn_wrapper}>
-          <div className={styles.topbtn_container}>
-            <TopBtn/>
-          </div>
-        </div>
+        <TopBtn/>
 
         <div className={styles.nav_container}>
           {nextPost ? (

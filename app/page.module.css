@@ -476,10 +476,10 @@
     width: 230px;
   } */
 
-  .link_icon {
+  /* .link_icon {
     width: 46px;
     height: 46px;
-  }
+  } */
 
   .lab_research {
     gap: 14px;
@@ -664,10 +664,10 @@
     width: 190px;
   }
 
-  .link_icon {
+  /* .link_icon {
     width: 46px;
     height: 46px;
-  }
+  } */
 
   .lab_research {
     gap: 14px;
@@ -1213,5 +1213,10 @@
   .lab_description_en {
     font-size: 14px;
     line-height: 20px;
+  }
+
+  .lab_img div {
+    right: -5px;
+    top: -5px;
   }
 }

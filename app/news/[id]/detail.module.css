@@ -360,19 +360,31 @@
   }
 
   .topbtn_wrapper {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+
+    bottom: 140px;
+
+    width: 100%;
+    padding: 0 60px;
+    max-width: 1020px;
+
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-    margin-top: 100px;
+    align-items: center;
+
+    pointer-events: none;
   }
 
   .topbtn_container {
     display: flex;
     align-items: flex-end;
     width: fit-content;
-    padding: 8.5px 10px;
+    padding: 12px 9.5px;
+    background: #1c1c1c;
     border: 1px solid #E4FC28;
-    cursor: pointer;
+    pointer-events: auto;
   }
 
 }
@@ -407,6 +419,7 @@
   .title_container {
     gap: 10px;
     margin-top: 30px;
+    max-width: 552px;
   }
 
   .title {
@@ -517,6 +530,12 @@
     width: 32px;
     height: 32px;
   }
+
+  .topbtn_wrapper {
+    bottom: 140px;
+    padding: 0 24px;
+    max-width: 600px;
+  }
 }
 
 @media screen and (max-width: 389px) {
@@ -586,6 +605,11 @@
 
   .nav_title {
     font-size: 14px;
+  }
+
+  .topbtn_wrapper {
+    padding: 0 20px;
+    max-width: 359px;
   }
 
 }
