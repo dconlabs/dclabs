@@ -1,6 +1,7 @@
 import "./globals.css";
 // import { cookies } from 'next/headers'
 import Footer from "./components/footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "dclabs",
@@ -15,6 +16,7 @@ export default async function RootLayout({ children }) {
   return (
     <html>
       <body className="layout">
+        <Analytics />
         <main className="content">
           {children}
         </main>
