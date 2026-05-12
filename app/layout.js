@@ -1,7 +1,7 @@
 import "./globals.css";
 // import { cookies } from 'next/headers'
 import Footer from "./components/footer";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "dclabs",
