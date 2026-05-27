@@ -20,7 +20,7 @@ export default function Education() {
       {
         subject_kr: '컨셉과\n아이데이션',
         subject_en: 'Concept and Ideation',
-        description_kr: '창의적 발상법과 콘셉트 도출 과정을 학습합니다. 다양한 아이데이션 기법으로 독창적 아이디어를 발굴하고 시각적 디자인으로 발전시킵니다. 토론과 발표를 통해 창의적 사고를 극대화하고 프로젝트 기획 기반을 다집니다.',
+        description_kr: '창의적 발상법과 콘셉트 도출 과정을 학습합니다. 다양한 아이데이션 기법으로 독창적 아이디어를 발굴하고 시각적 디자인으로 발전시킵니다. 창의적 사고를 극대화하고 프로젝트 기획 기반을 다집니다.',
         description_en: 'Learn creative thinking and concept development. Use various ideation techniques to build unique visual designs and plans.'
       },
       {
@@ -106,7 +106,7 @@ export default function Education() {
       {
         subject_kr: 'BX와\n미디어',
         subject_en: 'BX and Media',
-        description_kr: '미디어 환경에서 브랜드 경험이 전달되는 방식을 심도 있게 연구합니다. 온·오프라인 채널을 아우르는 통합적 브랜드 전략을 기획하고, 소비자의 상호작용을 분석해 최적의 미디어 커뮤니케이션 방안을 도출하는 실무 역량을 기릅니다.',
+        description_kr: '미디어 환경에서 브랜드 경험이 전달되는 방식을 심도 있게 탐구합니다. 온·오프라인 채널을 아우르는 통합적 브랜드 전략을 기획하고, 소비자의 상호작용을 분석해 최적의 미디어 커뮤니케이션 방안을 도출하는 실무 역량을 기릅니다.',
         description_en: 'Study how brand experiences are delivered across media. Plan integrated strategies and analyze consumer interactions.'
       }
     ],
