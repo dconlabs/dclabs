@@ -35,11 +35,11 @@ export default async function Home() {
       <div className="observe_wrapper" style={{marginBottom:'10px'}}>
         <div className={`${styles.main_copy} observe_content`}>
           <div className={styles.main_copy_en}>
-            Blending logic and<br/>emotion in <span>UX/UI and BX,</span><br/>we architect meaningful<br/>interactions brand<br/>identities to shape future<br/>digital experiences.
+            Blending logic and<br/>emotion in <span>UX/UI and BX,</span><br/>we architect meaningful<br/>interaction brand<br/>identities to shape future<br/>digital experiences.
             <div className={styles.backColor}/>
           </div>
           <div className={styles.main_copy_kr}>
-            <span>우리는 디지털 스펙트럼 안에서 논리와 감성의 교차점을 탐구합니다. </span><span>UX/UI 및 BX 분야에 특화되어 의미 있는 인터랙션과 실체 있는 브랜드 </span><span>아이덴티티를 설계하며, 디지털 경험의 미래를 만들어갈 혁신을 주도합니다.</span>
+            <span>우리는 디지털 스펙트럼 안에서 논리와 감성의 교차점을 탐구합니다. </span><span>UX/UI 및 BX 분야에 특화되어 의미 있는 인터랙션과 브랜드 </span><span>아이덴티티를 설계하며, 디지털 경험의 미래를 만들어갈 혁신을 주도합니다.</span>
           </div>
         </div>
       </div>

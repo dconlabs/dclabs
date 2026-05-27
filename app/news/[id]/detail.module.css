@@ -240,34 +240,25 @@
   background: #111;
 }
 
-/* 회색 전체 라인 */
 .loading_bar_container {
   position: fixed;
   top: 144px;
   left: 0;
-
   width: 100%;
   height: 6px;
-
   background: #555;
   overflow: hidden;
-
   z-index: 9999;
 }
 
-/* 움직이는 바 */
 .loading_bar {
   position: absolute;
   top: 0;
   left: -35%;
-
   width: 35%;
   height: 100%;
-
   background: #e4fc28;
-
   animation: loading-slide 1s ease-in-out infinite;
-
   will-change: transform, left;
 }
 
