@@ -12,6 +12,9 @@ export async function POST(req) {
     }
 
     const db = (await connectDB).db("news");
+
+    const lastPost = await db.collection("post").findOne({}, { sort: { order: -1 } });
+    const newOrder = lastPost ? lastPost.order + 1 : 0;
     
     await db.collection("post").insertOne({
       title: body.title,
@@ -22,7 +25,8 @@ export async function POST(req) {
       contents: body.contents,
       source: body.source,
       images: body.images || [],
-      createdAt: new Date(),    
+      createdAt: new Date(),
+      order: newOrder,
     });
 
     return NextResponse.json({ ok: true });

@@ -9,7 +9,7 @@ export default function NewsCard({ newsData, hasToken }) {
 
   const router = useRouter();
 
-  const sorted = newsData.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  const sorted = [...newsData].sort((a, b) => b.order - a.order);
 
   let category = ["All", "Notice", "Event", "Publication", "Others"]
   let [nowCategory, setNowCategory] = useState("All");
