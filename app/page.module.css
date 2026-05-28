@@ -368,13 +368,6 @@
   align-items: center;
 }
 
-.pagination_hidden {
-  display: flex;
-  gap: 40px;
-  margin-top: 60px;
-  align-items: center;
-}
-
 .page {
   color: #555;
   cursor: pointer;

@@ -89,19 +89,24 @@ export default function NewsCard({ newsData, hasToken }) {
         </div>
       ))}
 
-      <div className={currentPosts.length > 20 ? styles.pagination : styles.pagination_hidden}>
+      <div className={styles.pagination}>
 
         {pageNumbers.map((num) => (
-          <div key={num}
-            onClick={() => {setPageNum(num); scrollToNews();}}
+          <div
+            key={num}
+            onClick={() => {
+              setPageNum(num);
+              scrollToNews();
+            }}
             className={pageNum === num ? styles.active_page : styles.page}
           >
             {num}
           </div>
         ))}
 
-        {currentPosts.length > 20 && (
-          <div onClick={() => {
+        {totalPage > PAGES_PER_GROUP && (
+          <div
+            onClick={() => {
               if (pageGroup === 0) return;
 
               setPageGroup(pageGroup - 1);
@@ -109,24 +114,24 @@ export default function NewsCard({ newsData, hasToken }) {
             }}
             className={pageGroup === 0 ? styles.page_arrow_disabled : styles.page_arrow}
           >
-            <Arrow color={pageGroup === 0 ? '#888' : '#FFF'}/>
+            <Arrow color={pageGroup === 0 ? '#888' : '#FFF'} />
           </div>
         )}
 
-        {currentPosts.length > 20 && (
-          <div onClick={() => {
+        {totalPage > PAGES_PER_GROUP && (
+          <div
+            onClick={() => {
               if (endPage >= totalPage) return;
 
               setPageGroup(pageGroup + 1);
               setPageNum((pageGroup + 1) * PAGES_PER_GROUP + 1);
             }}
             className={endPage >= totalPage ? styles.page_arrow_disabled : styles.page_arrow}
-            style={{transform:'rotate(180deg)'}}
+            style={{ transform: 'rotate(180deg)' }}
           >
-            <Arrow color={endPage >= totalPage ? '#888' : '#FFF'}/>
+            <Arrow color={endPage >= totalPage ? '#888' : '#FFF'} />
           </div>
         )}
-
       </div>
     </div>
   );
