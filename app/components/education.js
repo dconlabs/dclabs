@@ -155,30 +155,37 @@ export default function Education() {
 
     a2f: [
       {
-        subject_kr: 'Cognitive Design',
-        subject_en: '인지 디자인',
-        description_kr: '사용자의 인지 과정과 행동을 이해하고 디자인에 반영합니다. 지각, 기억, 주의 등 인지 심리 요소를 바탕으로 정보 전달 및 인터페이스 설계를 최적화합니다. 직관적이고 사용자 친화적인 디자인 구현 능력을 기릅니다.',
+        subject_kr: 'Cognitive Design Activity',
+        subject_en: '디자인 활동의 인지적 과정 연구',
+        description_kr: '디자이너가 문제를 인식하고 아이디어를 발전시키며 해결안을 도출하는 과정에서 나타나는 인지적 메커니즘을 탐구한다.',
         description_en: 'Explore cognitive design principles. Understand how perception and memory affect users to create intuitive interfaces.'
       },
       {
         subject_kr: 'Design Thinking',
-        subject_en: '디자인 씽킹',
-        description_kr: '사용자 중심 문제 해결 방법론인 디자인 씽킹을 학습합니다. 공감, 문제 정의, 아이디어 도출, 프로토타이핑을 거쳐 창의적 해결책을 마련하고 실제 문제에 적용합니다. 실습과 협업을 중심으로 디자인 사고력을 강화합니다.',
+        subject_en: '디자인 씽킹 연구',
+        description_kr: '디자인 씽킹의 원리를 규명하고, 사용자 중심의 문제 해결 방법론으로서 다양한 산업 및 조직 맥락에서의 적용을 탐색한다.',
         description_en: 'Learn design thinking as a problem-solving tool. Practice empathy and prototyping to create highly creative solutions.'
 
       },
       {
-        subject_kr: 'Experience Strategy\nin Digital Contexts',
-        subject_en: '디지털 맥락에서의 경험 전략',
-        description_kr: '디지털 환경에 맞춰 사용자 경험을 전략적으로 설계합니다. 다양한 플랫폼과 접점에서 사용자 행동을 분석하고 일관된 경험 제공 전략을 수립합니다. 서비스와 브랜드의 핵심 가치를 높이는 통합 경험 설계 역량을 배양합니다.',
+        subject_kr: 'Integrated Brand\nExperience Design ',
+        subject_en: '통합적 브랜드 경험 디자인 연구',
+        description_kr: '다양한 접점에서 브랜드가 일관되고 통합된 경험을 제공할 수 있는 디자인 전략을 연구한다.',
         description_en: 'Focus on experience strategy in digital environments. Analyze user behavior across platforms to design consistent UX.'
 
       },
       {
-        subject_kr: 'Human-AI\nCo-Thinking in Design',
-        subject_en: '인간-AI 디자인 공동 사고',
-        description_kr: '인간과 AI가 함께 사고하며 문제를 해결하는 디자인 방식을 탐구합니다. AI를 협업 파트너로 삼아 아이디어를 발전시키고 복잡한 문제에 새롭게 접근합니다. 미래 지향적이고 융합적인 수준 높은 디자인 사고 역량을 다집니다.',
+        subject_kr: 'UX Strategy\nin Digital Contexts',
+        subject_en: '디지털 환경에서의 사용자 경험 전략 연구',
+        description_kr: '디지털 컨텐츠 분야에서 사용자 경험을 설계하고 최적화하는 방법론을 연구한다.',
         description_en: 'Explore human-AI co-thinking in design. Use AI as a strategic partner to develop ideas and solve complex UX problems.'
+
+      },
+      {
+        subject_kr: 'Human–AI\nCo-thinking in Design',
+        subject_en: '디자인에서의 인간–AI 공동 사고 연구',
+        description_kr: '디지털 컨텐츠 분야에서 사용자 경험을 설계하고 최적화하는 방법론을 연구한다.',
+        description_en: '디자인 과정에서 인간과 AI가 상호 보완적으로 사고하며 협업하는 방식을 탐구하고, AI 시대에 적합한 새로운 디자인 프로세스를 제안한다.'
 
       }
     ]

@@ -44,7 +44,8 @@ export default function Team() {
       research: [
         'Cognitive Design Activity',
         'Design Thinking',
-        'Experience Strategy\nin Digital Contexts',
+        'Integrated Brand\nExperience Design',
+        'UX Strategy\nin Digital Contexts',
         'Human–AI\nCo-thinking in Design'
       ],
       descriptionKr:
