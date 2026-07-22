@@ -184,8 +184,8 @@ export default function Education() {
       {
         subject_kr: 'Human–AI\nCo-thinking in Design',
         subject_en: '디자인에서의 인간–AI 공동 사고 연구',
-        description_kr: '디지털 컨텐츠 분야에서 사용자 경험을 설계하고 최적화하는 방법론을 연구한다.',
-        description_en: '디자인 과정에서 인간과 AI가 상호 보완적으로 사고하며 협업하는 방식을 탐구하고, AI 시대에 적합한 새로운 디자인 프로세스를 제안한다.'
+        description_kr: '디자인 과정에서 인간과 AI가 상호 보완적으로 사고하며 협업하는 방식을 탐구하고, AI 시대에 적합한 새로운 디자인 프로세스를 제안한다.',
+        description_en: 'Explore human-AI co-thinking in design. Use AI as a strategic partner to develop ideas and solve complex UX problems.'
 
       }
     ]
