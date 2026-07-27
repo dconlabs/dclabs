@@ -155,12 +155,6 @@ export default function Education() {
 
     a2f: [
       {
-        subject_kr: 'Cognitive Design Activity',
-        subject_en: '디자인 활동의 인지적 과정 연구',
-        description_kr: '디자이너가 문제를 인식하고 아이디어를 발전시키며 해결안을 도출하는 과정에서 나타나는 인지적 메커니즘을 탐구한다.',
-        description_en: 'Explore cognitive design principles. Understand how perception and memory affect users to create intuitive interfaces.'
-      },
-      {
         subject_kr: 'Design Thinking',
         subject_en: '디자인 씽킹 연구',
         description_kr: '디자인 씽킹의 원리를 규명하고, 사용자 중심의 문제 해결 방법론으로서 다양한 산업 및 조직 맥락에서의 적용을 탐색한다.',
@@ -176,14 +170,14 @@ export default function Education() {
       },
       {
         subject_kr: 'UX Strategy\nin Digital Contexts',
-        subject_en: '디지털 환경에서의 사용자 경험 전략 연구',
+        subject_en: '디지털 맥락 UX 디자인 전략',
         description_kr: '디지털 컨텐츠 분야에서 사용자 경험을 설계하고 최적화하는 방법론을 연구한다.',
         description_en: 'Explore human-AI co-thinking in design. Use AI as a strategic partner to develop ideas and solve complex UX problems.'
 
       },
       {
         subject_kr: 'Human–AI\nCo-thinking in Design',
-        subject_en: '디자인에서의 인간–AI 공동 사고 연구',
+        subject_en: '인간–AI 공동 사고 연구',
         description_kr: '디자인 과정에서 인간과 AI가 상호 보완적으로 사고하며 협업하는 방식을 탐구하고, AI 시대에 적합한 새로운 디자인 프로세스를 제안한다.',
         description_en: 'Explore human-AI co-thinking in design. Use AI as a strategic partner to develop ideas and solve complex UX problems.'
 

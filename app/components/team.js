@@ -42,7 +42,6 @@ export default function Team() {
       name: 'A2F Lab',
       logo: '/A2F_white.png',
       research: [
-        'Cognitive Design Activity',
         'Design Thinking',
         'Integrated Brand\nExperience Design',
         'UX Strategy\nin Digital Contexts',
